@@ -33,10 +33,10 @@
 
 ## 下载安装
 
-到 [Releases](../../releases) 下载 `植物大战僵尸2-1.7.5.apk`：
+到 [Releases](../../releases) 下载 `PvZ2-LostCity-1.7.5.apk`：
 
 ```bat
-adb install -r 植物大战僵尸2-1.7.5.apk
+adb install -r PvZ2-LostCity-1.7.5.apk
 ```
 
 首次启动会请求存储权限，请允许；否则无法写入 `Android/data`。
