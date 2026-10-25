@@ -8,6 +8,11 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
+#include <atomic>
+#include <pthread.h>
+#include <sys/stat.h>
+#include <time.h>
 #include <GLES2/gl2.h>
 #include <astc-codec/astc-codec.h>
 
@@ -219,41 +224,157 @@ static void etc1_decode_cpu(const uint8_t *data, uint8_t *out, int w, int h) {
     }
 }
 
-static bool astc_decode_scaled(const uint8_t *data, size_t imageSize,
-                               int w, int h, int bx, int by, int step,
-                               astc_codec::FootprintType fp,
-                               uint8_t **out, int *ow, int *oh) {
-    int bw = (w + bx - 1) / bx;
-    int bh = (h + by - 1) / by;
-    int nw = (bw + step - 1) / step;
-    int nh = (bh + step - 1) / step;
-    size_t dstBlocks = (size_t)nw * (size_t)nh;
-    uint8_t *tmp = (uint8_t *)calloc(dstBlocks, 16);
-    if (!tmp) return false;
-    for (int j = 0; j < nh; j++) {
-        for (int i = 0; i < nw; i++) {
-            int si = i * step, sj = j * step;
-            size_t off = (size_t)(sj * bw + si) * 16;
-            if (si < bw && sj < bh && off + 16 <= imageSize) {
-                memcpy(tmp + ((size_t)j * nw + i) * 16, data + off, 16);
-            }
+struct AstcStrip {
+    int y;
+    int h;
+    size_t off;
+    size_t size;
+    uint8_t *out;
+    bool ok;
+    AstcStrip() : y(0), h(0), off(0), size(0), out(nullptr), ok(false) {}
+};
+
+struct AstcStripCtx {
+    const uint8_t *data;
+    size_t imageSize;
+    int width;
+    int bx;
+    int by;
+    astc_codec::FootprintType fp;
+    std::vector<AstcStrip> *strips;
+    std::atomic<int> *next;
+};
+
+static uint64_t astc_hash(const uint8_t *p, size_t n, int w, int h, int fmt, int size) {
+    uint64_t x = 1469598103934665603ULL;
+    for (size_t i = 0; i < n; i++) {
+        x ^= p[i];
+        x *= 1099511628211ULL;
+    }
+    x ^= (uint64_t)w * 73856093ULL;
+    x ^= (uint64_t)h * 19349663ULL;
+    x ^= (uint64_t)fmt * 83492791ULL;
+    x ^= (uint64_t)size * 2654435761ULL;
+    return x;
+}
+
+static void ensure_astc_cache_dir() {
+    mkdir("/data/data/com.popcap.pvz2cthd/cache", 0770);
+    mkdir("/data/data/com.popcap.pvz2cthd/cache/glcache", 0770);
+}
+
+static uint8_t *cache_read_rgba(const char *path, int *w, int *h) {
+    FILE *f = fopen(path, "rb");
+    if (!f) return nullptr;
+    uint32_t hdr[2];
+    if (fread(hdr, sizeof(uint32_t), 2, f) != 2) {
+        fclose(f);
+        return nullptr;
+    }
+    int cw = (int)hdr[0], ch = (int)hdr[1];
+    if (cw <= 0 || ch <= 0 || cw > 8192 || ch > 8192) {
+        fclose(f);
+        return nullptr;
+    }
+    size_t sz = (size_t)cw * (size_t)ch * 4;
+    uint8_t *buf = (uint8_t *)malloc(sz);
+    if (!buf) {
+        fclose(f);
+        return nullptr;
+    }
+    if (fread(buf, 1, sz, f) != sz) {
+        free(buf);
+        fclose(f);
+        return nullptr;
+    }
+    fclose(f);
+    *w = cw;
+    *h = ch;
+    return buf;
+}
+
+static void cache_write_rgba(const char *path, int w, int h, const std::vector<AstcStrip> &strips) {
+    FILE *f = fopen(path, "wb");
+    if (!f) return;
+    uint32_t hdr[2] = {(uint32_t)w, (uint32_t)h};
+    fwrite(hdr, sizeof(uint32_t), 2, f);
+    for (size_t i = 0; i < strips.size(); i++) {
+        const AstcStrip &s = strips[i];
+        if (!s.out) continue;
+        long off = 8 + (long)s.y * w * 4;
+        if (fseek(f, off, SEEK_SET) == 0) {
+            fwrite(s.out, 1, (size_t)w * s.h * 4, f);
         }
     }
-    *ow = nw * bx;
-    *oh = nh * by;
-    size_t outsz = (size_t)(*ow) * (size_t)(*oh) * 4;
-    uint8_t *rgba = (uint8_t *)malloc(outsz);
-    bool ok = rgba &&
-              astc_codec::ASTCDecompressToRGBA(tmp, dstBlocks * 16,
-                                               (size_t)(*ow), (size_t)(*oh), fp,
-                                               rgba, outsz, (size_t)(*ow) * 4);
-    free(tmp);
-    if (!ok) {
-        free(rgba);
-        return false;
+    fclose(f);
+}
+
+static void *astc_strip_worker(void *arg) {
+    AstcStripCtx *ctx = (AstcStripCtx *)arg;
+    int i;
+    while ((i = ctx->next->fetch_add(1)) < (int)ctx->strips->size()) {
+        AstcStrip &s = (*ctx->strips)[i];
+        size_t outsz = (size_t)ctx->width * s.h * 4;
+        s.out = (uint8_t *)malloc(outsz);
+        if (!s.out) {
+            s.ok = false;
+            continue;
+        }
+        s.ok = astc_codec::ASTCDecompressToRGBA(
+                ctx->data + s.off, s.size, (size_t)ctx->width, (size_t)s.h,
+                ctx->fp, s.out, outsz, (size_t)ctx->width * 4);
     }
-    *out = rgba;
-    return true;
+    return nullptr;
+}
+
+static bool astc_decode_parallel(const uint8_t *data, size_t imageSize,
+                                 int width, int height, int bx, int by,
+                                 astc_codec::FootprintType fp,
+                                 std::vector<AstcStrip> &strips) {
+    const int maxThreads = 4;
+    int nthreads = (int)sysconf(_SC_NPROCESSORS_ONLN);
+    if (nthreads < 2) nthreads = 2;
+    if (nthreads > maxThreads) nthreads = maxThreads;
+
+    std::atomic<int> next(0);
+    AstcStripCtx ctx;
+    ctx.data = data;
+    ctx.imageSize = imageSize;
+    ctx.width = width;
+    ctx.bx = bx;
+    ctx.by = by;
+    ctx.fp = fp;
+    ctx.strips = &strips;
+    ctx.next = &next;
+
+    pthread_t tids[maxThreads];
+    int started = 0;
+    for (int i = 0; i < nthreads; i++) {
+        if (pthread_create(&tids[i], nullptr, astc_strip_worker, &ctx) == 0) {
+            started++;
+        }
+    }
+    if (started == 0) {
+        astc_strip_worker(&ctx);
+    } else {
+        for (int i = 0; i < started; i++) pthread_join(tids[i], nullptr);
+        astc_strip_worker(&ctx);
+    }
+
+    bool ok = true;
+    for (size_t i = 0; i < strips.size(); i++) {
+        if (!strips[i].ok) {
+            ok = false;
+            break;
+        }
+    }
+    if (!ok) {
+        for (size_t i = 0; i < strips.size(); i++) {
+            free(strips[i].out);
+            strips[i].out = nullptr;
+        }
+    }
+    return ok;
 }
 
 extern "C" void glCompressedTexImage2D(GLenum target, GLint level, GLenum internalformat,
@@ -274,7 +395,7 @@ extern "C" void glCompressedTexImage2D(GLenum target, GLint level, GLenum intern
             return;
         }
     }
-    // ASTC (0x93B0..0x93BD): decode to RGBA8888 in horizontal strips to limit memory
+    // ASTC (0x93B0..0x93BD): full-resolution decode, parallel strips + internal cache
     if (data && width > 0 && height > 0 && real_tex) {
         astc_codec::FootprintType fp;
         int bx = 4, by = 4;
@@ -297,49 +418,70 @@ extern "C" void glCompressedTexImage2D(GLenum target, GLint level, GLenum intern
             default: is_astc = false; break;
         }
         if (is_astc) {
-            int step = 1;
-            if (width >= 2048 || height >= 2048) step = 2;
-            
-            if (step > 1) {
-                uint8_t *scaled = nullptr;
-                int ow = 0, oh = 0;
-                if (astc_decode_scaled((const uint8_t *)data, (size_t)imageSize,
-                                       width, height, bx, by, step, fp,
-                                       &scaled, &ow, &oh) && real_tex) {
-                    LOGI("ASTC scale step=%d %dx%d -> %dx%d", step, width, height, ow, oh);
-                    real_tex(target, level, GL_RGBA, ow, oh, border, GL_RGBA, GL_UNSIGNED_BYTE, scaled);
-                    free(scaled);
+            struct timespec ts0, ts1;
+            clock_gettime(CLOCK_MONOTONIC, &ts0);
+            char cpath[256];
+            cpath[0] = 0;
+            uint64_t hash = astc_hash((const uint8_t *)data, (size_t)imageSize,
+                                      width, height, (int)internalformat, imageSize);
+            if (level == 0 && (long long)width * height >= 1024 * 1024) {
+                ensure_astc_cache_dir();
+                snprintf(cpath, sizeof(cpath),
+                         "/data/data/com.popcap.pvz2cthd/cache/glcache/%016llx.rgba",
+                         (unsigned long long)hash);
+                int cw = 0, ch = 0;
+                uint8_t *cb = cache_read_rgba(cpath, &cw, &ch);
+                if (cb) {
+                    LOGI("ASTC cache hit %dx%d", cw, ch);
+                    real_tex(target, level, GL_RGBA, cw, ch, border, GL_RGBA, GL_UNSIGNED_BYTE, cb);
+                    free(cb);
                     return;
                 }
-                free(scaled);
             }
             int blocksPerRow = (width + bx - 1) / bx;
             int blockRows = (height + by - 1) / by;
-            // allocate the RGBA texture once; feed it strip by strip
-            real_tex(target, level, GL_RGBA, width, height, border, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
             int stripBlocks = 256 / by;
             if (stripBlocks < 1) stripBlocks = 1;
-            bool ok = true;
+            std::vector<AstcStrip> strips;
             for (int r = 0; r < blockRows; r += stripBlocks) {
-                int rows = blockRows - r; if (rows > stripBlocks) rows = stripBlocks;
-                int sh = rows * by; if (sh > height - r * by) sh = height - r * by;
-                size_t srcOff = (size_t)r * blocksPerRow * 16;
-                size_t srcSize = (size_t)rows * blocksPerRow * 16;
-                if (srcOff + srcSize > (size_t)imageSize) srcSize = (size_t)imageSize - srcOff;
-                size_t outsz = (size_t)width * (size_t)sh * 4;
-                uint8_t *out = (uint8_t *)malloc(outsz);
-                if (!out) { ok = false; break; }
-                if (!astc_codec::ASTCDecompressToRGBA((const uint8_t *)data + srcOff, srcSize,
-                                                      (size_t)width, (size_t)sh, fp,
-                                                      out, outsz, (size_t)width * 4)) {
-                    ok = false;
-                    free(out);
-                    break;
-                }
-                if (real_sub) real_sub(target, level, 0, r * by, width, sh, GL_RGBA, GL_UNSIGNED_BYTE, out);
-                free(out);
+                int rows = blockRows - r;
+                if (rows > stripBlocks) rows = stripBlocks;
+                AstcStrip s;
+                s.y = r * by;
+                s.h = rows * by;
+                if (s.h > height - s.y) s.h = height - s.y;
+                s.off = (size_t)r * blocksPerRow * 16;
+                s.size = (size_t)rows * blocksPerRow * 16;
+                if (s.off + s.size > (size_t)imageSize) s.size = (size_t)imageSize - s.off;
+                strips.push_back(s);
             }
-            if (ok) return;
+            bool ok = false;
+            if (strips.size() >= 2) {
+                ok = astc_decode_parallel((const uint8_t *)data, (size_t)imageSize,
+                                          width, height, bx, by, fp, strips);
+            } else if (!strips.empty()) {
+                AstcStrip &s = strips[0];
+                size_t outsz = (size_t)width * s.h * 4;
+                s.out = (uint8_t *)malloc(outsz);
+                s.ok = s.out && astc_codec::ASTCDecompressToRGBA(
+                        (const uint8_t *)data + s.off, s.size, (size_t)width, (size_t)s.h,
+                        fp, s.out, outsz, (size_t)width * 4);
+                ok = s.ok;
+            }
+            if (ok) {
+                real_tex(target, level, GL_RGBA, width, height, border, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+                for (size_t i = 0; i < strips.size(); i++) {
+                    AstcStrip &s = strips[i];
+                    if (real_sub) real_sub(target, level, 0, s.y, width, s.h, GL_RGBA, GL_UNSIGNED_BYTE, s.out);
+                }
+                if (cpath[0]) cache_write_rgba(cpath, width, height, strips);
+                for (size_t i = 0; i < strips.size(); i++) free(strips[i].out);
+                clock_gettime(CLOCK_MONOTONIC, &ts1);
+                long long ms = (ts1.tv_sec - ts0.tv_sec) * 1000LL + (ts1.tv_nsec - ts0.tv_nsec) / 1000000LL;
+                LOGI("ASTC %dx%d strips=%zu full-res %lldms", width, height, strips.size(), ms);
+                return;
+            }
+            for (size_t i = 0; i < strips.size(); i++) free(strips[i].out);
             LOGI("ASTC decode failed internal=0x%x %dx%d size=%d", internalformat, width, height, imageSize);
         }
     }
