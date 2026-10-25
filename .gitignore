@@ -1,0 +1,14 @@
+# Build outputs / game data
+*.apk
+*.zip
+*.keystore
+*.jks
+*.so
+*.dex
+*.a
+*.o
+build/
+work/
+# Python
+__pycache__/
+*.pyc
