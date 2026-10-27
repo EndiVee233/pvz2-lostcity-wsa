@@ -96,3 +96,37 @@ The script rewrites `classes.dex` (keeping the APK layout, stored entries stay
 With the patch no transaction is created at all (`CreateHttpTransaction`
 count stays 0 in logcat) and the notice dialog shows its built-in text without
 the overlay.
+## 7. Original "Turbo" speed button instead of the PvP one
+
+The Chinese 1.7.5 build ships `UIChangeSpeedButton` as
+`ArenaChangeSpeedButton` / `IMAGE_UI_HUD_INGAME_ARENA_CHANGE_SPEED`
+(the PvP style). The launcher used to flip it at runtime
+(`assets/pvz2tool/features/speed/double_speed.js`); without the launcher
+the PvP style becomes the default.
+
+`src/tools/patch_speed.py` rebuilds `dynamic.rsb` with the original style:
+
+```
+Class         = SpeedChange
+SizeFromImage = IMAGE_UI_HUD_INGAME_SPEED
+```
+
+The `Packages` group of `dynamic.rsb` (an `1bsr` v4 container) stores each
+package as a Rijndael-CBC encrypted RTON blob:
+
+* header `0x10 0x00`, then ciphertext
+* key = ASCII of `md5("com_popcap_pvz2_magento_product_2013_05_05")`
+* iv  = key[4:28], block size 192, ZeroBytePadding
+
+The script decrypts all packages, replaces the two strings (both `0x90` and
+`0x81` string encodings), pads the plaintext back to its original length and
+re-encrypts, so the container layout, sizes and offsets stay untouched.
+
+Then rebuild the split `pvz2data.zip` (raw copy of unchanged entries):
+
+```bash
+python src/tools/repack_raw.py
+```
+
+and replace `assets/pvz2data.zip.001/.002/.003` in the APK before signing.
+`src/tools/rsbtool.py` is the minimal RSB reader used by the patcher.
