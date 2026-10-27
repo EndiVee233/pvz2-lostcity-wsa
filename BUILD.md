@@ -75,3 +75,24 @@ apksigner sign --ks pvz2.keystore --ks-key-alias pvz2 \
 
 `resources.arsc` **must** be `ZIP_STORED` and 4-byte aligned, otherwise
 Android 11+ refuses to install (`Targeting R+ requires resources.arsc ...`).
+
+## 6. Skip the `服务器通讯中` overlay
+
+`AndroidHttpProxy.GetNetworkStatus()` must return `0` (NET_NOT_REACHABLE).
+With the original implementation the native side keeps issuing
+`POST http://cloudpvz2android.ditwan.cn/index.php` once per frame while the
+notice dialog is open (the endpoint is long dead), never leaves the waiting
+state, and the `服务器通讯中...` overlay stays on screen and swallows taps.
+
+Run the dex patch after assembling and before `zipalign`:
+
+```bash
+python src/tools/patch_dex_network_status.py unsigned.apk unsigned_netpatch.apk
+mv unsigned_netpatch.apk unsigned.apk
+```
+
+The script rewrites `classes.dex` (keeping the APK layout, stored entries stay
+4-byte aligned) and leaves the APK unsigned, so sign afterwards as usual.
+With the patch no transaction is created at all (`CreateHttpTransaction`
+count stays 0 in logcat) and the notice dialog shows its built-in text without
+the overlay.
