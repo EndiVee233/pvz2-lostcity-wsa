@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "same_probe_results_on_original_and_reconstructed_dex": true,
+  "runs": {
+    "original": [
+      {
+        "passed": true,
+        "checks": 358,
+        "base64_checks": 279,
+        "input_event_checks": 13,
+        "http_cases": 5,
+        "assertions_enabled": false,
+        "probe_class": "com.popcap.SexyAppFramework.FrameworkProbe"
+      },
+      {
+        "passed": true,
+        "checks": 75,
+        "xml_checks": 17,
+        "schedule_checks": 26,
+        "coin_checks": 8,
+        "ipc_checks": 11,
+        "legacy_http_checks": 13,
+        "probe_class": "com.popcap.util.ServicesProbe"
+      }
+    ],
+    "reconstructed": [
+      {
+        "passed": true,
+        "checks": 358,
+        "base64_checks": 279,
+        "input_event_checks": 13,
+        "http_cases": 5,
+        "assertions_enabled": false,
+        "probe_class": "com.popcap.SexyAppFramework.FrameworkProbe"
+      },
+      {
+        "passed": true,
+        "checks": 75,
+        "xml_checks": 17,
+        "schedule_checks": 26,
+        "coin_checks": 8,
+        "ipc_checks": 11,
+        "legacy_http_checks": 13,
+        "probe_class": "com.popcap.util.ServicesProbe"
+      }
+    ]
+  },
+  "test_variant_tag": "offline-v2",
+  "total_checks_per_target": 433,
+  "baseline": "classes.dex extracted from input APK, not the independently installed original app",
+  "original_main_dex_sha256": "78b7201e922f341ff8d7abe8d25e8e7552f47b2828249a0bc4d9a288f43608e3",
+  "reconstructed_installed_apk_sha256": "a84c77d52a4cc2724a5828c95f3b0eb1506c37420a85d4851e55e66091483e92",
+  "android_assertion_note": "Android probes use default disabled assertions; enabled/disabled framework behavior is separately checked on desktop JVM",
+  "probe_dex_sha256": "886ba6cd6ea3d1eba17d2db961adeda7c5b98c327a016db29a5e749d0c9ba572",
+  "test_only_native_callback_overrides": true,
+  "test_log_adapter_packaged_in_probe": false,
+  "test_harness_or_compile_only_api_packaged_in_app": false,
+  "full_gameplay_validated": false
+}

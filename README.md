@@ -64,6 +64,12 @@ ASTC/ETC1/RGBA4444 纹理 libRestart.so 必须在 **GL 线程上同步解码**�
 4. 用 `build_single.py` 移除原启动器资源 加入 `assets/pvz2data.zip.00x` 字体 EA logo；
 5. `zipalign -p 4` + `apksigner` 签名
 
+## Java 源码恢复进展
+
+`src/recovered/` 保存了从本地取得的中文版 1.7.5 APK 恢复出的维护用源码快照：85 个 Java 文件生成 169 个类，其中包括启动入口和主 DEX 的 84 个 `com.popcap` Java 文件。WSA 中已验证独立离线包可进入神秘埃及第 1 天教程，本地玩家资料可在冷启动后保留；详细范围和限制见 [`src/recovered/report.md`](src/recovered/report.md)。
+
+这不是完整游戏源码工程：大部分第三方托管代码仍是 Smali，C++ 游戏核心仍依赖原始 `.so`，完整战役和联网功能未验证。为避免分发游戏内容，仓库不包含 APK、游戏资源、原生库或签名密钥。请先阅读 [`NOTICE.md`](NOTICE.md)。
+
 ## 签名
 
 - 证书：`CN=PvZ2 Patched`

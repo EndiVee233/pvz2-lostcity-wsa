@@ -76,6 +76,33 @@ apksigner sign --ks pvz2.keystore --ks-key-alias pvz2 \
 `resources.arsc` **must** be `ZIP_STORED` and 4-byte aligned, otherwise
 Android 11+ refuses to install (`Targeting R+ requires resources.arsc ...`).
 
+## 7. Recovered Java snapshot and offline validation
+
+The additional `src/recovered/` tree is a source and evidence snapshot, not a
+standalone replacement for the original APK project. It contains the recovered
+bootstrap plus all 84 exported `com.popcap` Java files from the main DEX. The
+verified offline test APK uses package `com.popcap.pvz2cthd.reconstruction`,
+enables the `pvz2.reconstruction.offline` manifest flag, and stores its local
+profile under its private app data directory. The original package and its
+network branch were left unchanged.
+
+The WSA evidence records 433 differential Java checks, welcome/menu/first-level
+gameplay, and local profile retention after a cold restart. It does not validate
+the full campaign, cloud services, purchases, sharing, or system notifications.
+Native libraries and most other SDK classes remain binary/Smali. The bounded
+native bridge fragment is analysis evidence only; it was not compiled or linked.
+
+The source snapshot omits the original APK, decoded assets/Smali, API stub JARs,
+native libraries, signing key, and device-specific files. Rebuilding the complete
+APK therefore requires a legally obtained original APK and the local workspace
+layout described above. `src/recovered/tools/build_dex_reference_jar.py` creates
+compile-only declarations from `raw/classes*.dex`; the generated JAR contains
+no original method implementations and must never be packaged as application
+code. Current sanitized validation records are under
+`src/recovered/`.
+
+## 8. Original "Turbo" speed button instead of the PvP one
+
 ## 6. Skip the `服务器通讯中` overlay
 
 `AndroidHttpProxy.GetNetworkStatus()` must return `0` (NET_NOT_REACHABLE).

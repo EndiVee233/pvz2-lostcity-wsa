@@ -1,0 +1,170 @@
+{
+  "build_completed": true,
+  "windows_powershell_entrypoint_build_completed": true,
+  "signed_apk": "rebuild_project\\output\\PvZ2-LostCity-1.7.5-rebuilt.apk",
+  "signed_apk_size": 1405414714,
+  "signed_apk_sha256": "d7a71b884300547ec2f50d860dde74dcb641838b18e2ead2942a9cdb6b5c42a5",
+  "signature_schemes_verified": [
+    "v1",
+    "v2",
+    "v3"
+  ],
+  "dex_files": [
+    {
+      "name": "classes.dex",
+      "class_count": 1990,
+      "class_descriptors_preserved": true,
+      "original_method_ids": 16698,
+      "rebuilt_method_ids": 16705,
+      "original_version": "035",
+      "rebuilt_version": "035"
+    },
+    {
+      "name": "classes2.dex",
+      "class_count": 2,
+      "class_descriptors_preserved": true,
+      "original_method_ids": 100,
+      "rebuilt_method_ids": 100,
+      "original_version": "035",
+      "rebuilt_version": "035"
+    },
+    {
+      "name": "classes3.dex",
+      "class_count": 16698,
+      "class_descriptors_preserved": true,
+      "original_method_ids": 65470,
+      "rebuilt_method_ids": 65470,
+      "original_version": "037",
+      "rebuilt_version": "035"
+    },
+    {
+      "name": "classes4.dex",
+      "class_count": 7999,
+      "class_descriptors_preserved": true,
+      "original_method_ids": 65353,
+      "rebuilt_method_ids": 65353,
+      "original_version": "037",
+      "rebuilt_version": "035"
+    },
+    {
+      "name": "classes5.dex",
+      "class_count": 7774,
+      "class_descriptors_preserved": true,
+      "original_method_ids": 65107,
+      "rebuilt_method_ids": 65107,
+      "original_version": "037",
+      "rebuilt_version": "035"
+    },
+    {
+      "name": "classes6.dex",
+      "class_count": 9246,
+      "class_descriptors_preserved": true,
+      "original_method_ids": 65071,
+      "rebuilt_method_ids": 65071,
+      "original_version": "037",
+      "rebuilt_version": "035"
+    },
+    {
+      "name": "classes7.dex",
+      "class_count": 6739,
+      "class_descriptors_preserved": true,
+      "original_method_ids": 42785,
+      "rebuilt_method_ids": 42785,
+      "original_version": "037",
+      "rebuilt_version": "035"
+    },
+    {
+      "name": "classes8.dex",
+      "class_count": 9,
+      "class_descriptors_preserved": true,
+      "original_method_ids": 132,
+      "rebuilt_method_ids": 133,
+      "original_version": "035",
+      "rebuilt_version": "035"
+    }
+  ],
+  "total_classes": 50457,
+  "java_bootstrap_compiled_classes": 9,
+  "java_game_bridge_compiled_classes": 160,
+  "compile_only_stubs_packaged": false,
+  "java_source_files": 85,
+  "main_dex_popcap_source_files": 84,
+  "all_main_dex_popcap_exported_java_files_in_build": true,
+  "popcap_namespace_total_classes": 170,
+  "popcap_namespace_source_compiled_classes": 169,
+  "popcap_namespace_remaining_smali_classes": [
+    "Lcom/popcap/SexyAppFramework/GooglePlayPurchaseDriver$11;"
+  ],
+  "compiler_added_private_enum_methods": 6,
+  "native_method_declarations_preserved": 32,
+  "resource_and_build_constant_values_preserved": 311,
+  "framework_behavior_desktop_passed": true,
+  "framework_behavior_wsa_differential_passed": true,
+  "framework_probe_checks_per_run": 433,
+  "unchanged_non_dex_entries_verified": 1726,
+  "resource_packages": [
+    {
+      "package": "com.popcap.pvz2cthd",
+      "id": "0x7f"
+    },
+    {
+      "package": "io.github.dreammooncai.pvz2tool",
+      "id": "0x66"
+    }
+  ],
+  "native_libraries": [
+    {
+      "file": "lib/armeabi/libHookPVZ2.so",
+      "sha256": "ffd2fd05606d79afa4585d65423ead1432dfbbca1db28a67e75b83afdee32678",
+      "compiled_from_source": false
+    },
+    {
+      "file": "lib/armeabi/libandroidx.graphics.path.so",
+      "sha256": "41399eba6fc2a60f6f14642375c1824f3cf25eb8fec7397d753730a3ceda3e2b",
+      "compiled_from_source": false
+    },
+    {
+      "file": "lib/armeabi/libczProject.so",
+      "sha256": "eb62a1a9828498b2ed028233d5efc3eb8e5cf2d4274b6e5da31dc92a73330dfd",
+      "compiled_from_source": false
+    },
+    {
+      "file": "lib/armeabi/libegamepay_dr2.so",
+      "sha256": "6776ad64d2c64f837de5fa318fbf13101f1bc161f6dd57ff5650d20ea5d905c5",
+      "compiled_from_source": false
+    },
+    {
+      "file": "lib/armeabi/libplugin_phone.so",
+      "sha256": "45d4a091708fd8ab412da67a3ae9f147231b15f8564dd8e520f9b6e6552aee15",
+      "compiled_from_source": false
+    },
+    {
+      "file": "lib/armeabi/libSrc.so",
+      "sha256": "0892806592b0a6a1503d246020a9c69a634c85aa65d9baf2955106ad432420df",
+      "compiled_from_source": false
+    },
+    {
+      "file": "lib/armeabi/libypiap.so",
+      "sha256": "ac9e522b139e4e9888d866a05bf1d9b58036d42dafe654f885f012d8445c2002",
+      "compiled_from_source": false
+    },
+    {
+      "file": "lib/armeabi/libRestart.so",
+      "sha256": "2e41c5f6839021601543c6a0061332bf0897589c6cb3ac1392d655bea6293bbb",
+      "compiled_from_source": false
+    }
+  ],
+  "original_manifest_preserved": true,
+  "original_apk_sha256_unchanged": "1655512770c6968bd4216f0d66b8be955ce464c6e6881b5de6cbf776f245e1a4",
+  "complete_high_level_source": false,
+  "native_game_engine_compiled_from_source": false,
+  "resource_table_compiled_from_xml": false,
+  "device_runtime_tested": true,
+  "runtime_source_archive_hash_matches": true,
+  "runtime_test_variant_payload_matches_current_build": true,
+  "device_runtime_test_scope": "Isolated offline WSA variant; welcome, menu clicks, first-level tutorial and restart checks",
+  "offline_overlay_fix_verified": true,
+  "local_profile_survived_cold_restart": true,
+  "complete_gameplay_validated": false,
+  "seconds": 14.2
+}

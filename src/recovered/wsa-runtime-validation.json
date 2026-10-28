@@ -1,0 +1,45 @@
+{
+  "collected_at": "2026-10-28T20:59:12.212390+08:00",
+  "test_variant_tag": "offline-v2",
+  "android_version": "13",
+  "test_application_id": "com.popcap.pvz2cthd.reconstruction",
+  "installed_apk_sha256": "a84c77d52a4cc2724a5828c95f3b0eb1506c37420a85d4851e55e66091483e92",
+  "installed_apk_matches_recorded_variant": true,
+  "source_apk_sha256": "d7a71b884300547ec2f50d860dde74dcb641838b18e2ead2942a9cdb6b5c42a5",
+  "native_libraries_and_dex_match_source": true,
+  "resumed_activity": "com.popcap.pvz2cmhd.SexyAppActivity (device/task identifiers removed)",
+  "fatal_log_lines": [],
+  "fatal_log_markers": [
+    "FATAL EXCEPTION",
+    "Fatal signal",
+    "UnsatisfiedLinkError",
+    "NoSuchMethodError",
+    "VerifyError",
+    "Resources$NotFoundException"
+  ],
+  "observed_screens": [
+    "unblocked welcome",
+    "main menu",
+    "Egypt day 1 tutorial"
+  ],
+  "resource_zero_id_crash_fixed": true,
+  "bootstrap_extracted_bytes_observed_in_v1": 2745361062,
+  "reused_existing_extraction_marker": true,
+  "complete_gameplay_validated": false,
+  "runtime_limit": "Full campaign, cloud services, purchases and long-term saves are not fully validated.",
+  "original_package_still_installed": true,
+  "original_package_uninstalled": false,
+  "original_app_data_cleared": false,
+  "original_application_id_rebuilt_apk_installed": false,
+  "test_signature": "local development key",
+  "test_variant_changes": [
+    "isolated manifest package, label and authorities",
+    "resource package 0x7f name; IDs and other resource content preserved"
+  ],
+  "offline_manifest_flag": true,
+  "communication_overlay_removed": true,
+  "first_level_tutorial_entered": true,
+  "test_scope": "Isolated offline WSA variant; welcome, menu clicks, first-level tutorial and restart checks",
+  "local_profile_survived_cold_restart": true,
+  "isolated_save_path": "files/userdataNo_Backup/pp.dat"
+}
