@@ -1,0 +1,15 @@
+{
+  "source_offline_apk_sha256": "a84c77d52a4cc2724a5828c95f3b0eb1506c37420a85d4851e55e66091483e92",
+  "test_apk_sha256": "0f059b656f1d118c824ed69072b9ee204586ee91a90d004b766e9e2fb5b7fd00",
+  "changed_payload_entries": [
+    "lib/armeabi/libRestart.so",
+    "lib/armeabi/libSrc.so"
+  ],
+  "offline_manifest_preserved": true,
+  "isolated_application_id_preserved": true,
+  "runtime_verified": true,
+  "relative_to_v4_changed_payload_entries": [
+    "lib/armeabi/libSrc.so"
+  ],
+  "runtime_record": "native_analysis/startup_dialogs/runtime-validation.json"
+}

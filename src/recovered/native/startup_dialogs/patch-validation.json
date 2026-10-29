@@ -1,0 +1,68 @@
+{
+  "source_v4_sha256": "f58e6ac5a5be1470aea6aa51653693556884ad8287d3e68ea9ae0d4f75e1711b",
+  "patched_sha256": "496a73a0b624a3b77586e3933f94c1224db5e52d1da53aacce5f621aca717891",
+  "patches": [
+    {
+      "ghidra_address": "0x41e944",
+      "file_offset": "0x40e944",
+      "name_inferred": "CloudNetworkFailurePrompt",
+      "original": "f04f2de9b8a29fe5",
+      "patched": "0000a0e31eff2fe1"
+    },
+    {
+      "ghidra_address": "0x412700",
+      "file_offset": "0x402700",
+      "name_inferred": "FirstGameAnnouncement",
+      "original": "78482de9153ca0e3",
+      "patched": "0000a0e31eff2fe1"
+    },
+    {
+      "ghidra_address": "0x4127bc",
+      "file_offset": "0x4027bc",
+      "name_inferred": "ActivityGameAnnouncement",
+      "original": "78482de94d5da0e3",
+      "patched": "0000a0e31eff2fe1"
+    }
+  ],
+  "bounded_arm_cases": [
+    {
+      "function": "CloudNetworkFailurePrompt",
+      "argument": "0x0",
+      "returns_zero": true,
+      "stack_and_callee_register_preserved": true
+    },
+    {
+      "function": "CloudNetworkFailurePrompt",
+      "argument": "0x6000000",
+      "returns_zero": true,
+      "stack_and_callee_register_preserved": true
+    },
+    {
+      "function": "FirstGameAnnouncement",
+      "argument": "0x0",
+      "returns_zero": true,
+      "stack_and_callee_register_preserved": true
+    },
+    {
+      "function": "FirstGameAnnouncement",
+      "argument": "0x6000000",
+      "returns_zero": true,
+      "stack_and_callee_register_preserved": true
+    },
+    {
+      "function": "ActivityGameAnnouncement",
+      "argument": "0x0",
+      "returns_zero": true,
+      "stack_and_callee_register_preserved": true
+    },
+    {
+      "function": "ActivityGameAnnouncement",
+      "argument": "0x6000000",
+      "returns_zero": true,
+      "stack_and_callee_register_preserved": true
+    }
+  ],
+  "runtime_verified": true,
+  "scope": "Isolated offline package only. Return zero without constructing these dialogs; generic dialogs, profile-delete confirmation and network status are unchanged. Emulator checks only patched exits; WSA verification is separate.",
+  "runtime_record": "native_analysis/startup_dialogs/runtime-validation.json"
+}

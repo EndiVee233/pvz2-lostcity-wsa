@@ -1,0 +1,23 @@
+{
+  "installed_apk_sha256": "0f059b656f1d118c824ed69072b9ee204586ee91a90d004b766e9e2fb5b7fd00",
+  "installed_matches_verified_artifact": true,
+  "cold_starts_verified": 2,
+  "manual_dismissals_during_cold_starts": 0,
+  "network_failure_popup_absent": true,
+  "game_announcements_absent": true,
+  "main_menu_interactive_profile_list_opened": true,
+  "fatal_log_markers": [],
+  "v4_fixes_retained_in_native_payload": true,
+  "save_validation": {
+    "before_profile_count": 2,
+    "after_profile_count": 2,
+    "profile_uid_and_name_map_preserved": true
+  },
+  "full_campaign_retested": false,
+  "screenshots": [
+    "rebuild_project/logs/wsa/startup-dialogs/cold-1-18.png",
+    "rebuild_project/logs/wsa/startup-dialogs/cold-1-28.png",
+    "rebuild_project/logs/wsa/startup-dialogs/profiles-click.png",
+    "rebuild_project/logs/wsa/startup-dialogs/cold-2-30.png"
+  ]
+}

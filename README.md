@@ -98,3 +98,5 @@ ASTC/ETC1/RGBA4444 纹理 libRestart.so 必须在 **GL 线程上同步解码**�
 ## 你知道吗
 
 本项目由AI编写
+
+最新 WSA 验证版 v5 关闭了离线启动时的网络故障与公告弹窗，并保留多存档修复。补丁与验证范围见 [docs/startup-dialog-suppression.md](docs/startup-dialog-suppression.md)。APK、游戏库与用户存档不纳入仓库。
