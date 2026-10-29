@@ -1,0 +1,2427 @@
+{
+  "compiler": "Zig C++ driver",
+  "version": "0.13.0",
+  "target": "Windows x86_64",
+  "standard": "C++17",
+  "project_warning_flags": [
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "compilation_succeeded": true,
+  "static_archive_succeeded": true,
+  "link_succeeded": true,
+  "execution_exit_code": 0,
+  "observed_stdout": [
+    "PASS 18 profile lifecycle checks",
+    "PASS 47 dirty-state checks",
+    "PASS 37 engine handle ARM differential checks",
+    "PASS 138 engine registry ARM differential checks",
+    "PASS 632 engine slot ARM differential checkpoints",
+    "PASS 8 owned-slot integration checks",
+    "PASS 3995 descriptor tree ARM/Thumb exact-state checkpoints",
+    "PASS 1240 engine intern ARM full-state checkpoints",
+    "PASS 4230 name-index/binding/bank ARM full-state checkpoints",
+    "PASS 12 dynamic registry integration checks",
+    "PASS 359 real-constructor/store-lifecycle ARM full-state checkpoints",
+    "PASS 462 package/path/nonempty-teardown ARM checkpoints",
+    "PASS 480 RTON metadata ARM byte/cache checkpoints",
+    "PASS 2140 RTON input ARM value/position checkpoints",
+    "PASS 466 RTON normalizer ARM byte/table checkpoints",
+    "PASS 19396 indexed RTON reader ARM return/cursor checkpoints",
+    "PASS 7542 non-RTID RTON scalar ARM bits/cursor checkpoints",
+    "PASS 54 real reflection factory/property/reference ARM full-state checkpoints",
+    "PASS 3462 RTON numeric/narrow-decimal float ARM bits/cursor checkpoints",
+    "PASS 50 inherited reflection factory/property/list/reference ARM full-state checkpoints",
+    "PASS 80 railcart/inherited reflection nested-record ARM full-state checkpoints",
+    "PASS 139 seedbank/inherited reflection enum/bool/string-list ARM full-state checkpoints",
+    "PASS 197 wave/inherited reflection nested-reference ARM full-state checkpoints",
+    "PASS 282 level/inherited reflection module-reference ARM full-state checkpoints",
+    "PASS 25 SunDropper original ARM field checkpoints",
+    "PASS 15 win condition original ARM branch/callback cases",
+    "PASS 77 danger module original ARM field/identity checkpoints; 3 host teardown checks",
+    "PASS 8 brain boundary original ARM field checkpoints"
+  ],
+  "test_scope": "All 22 programs compiled/passed with C++17 -Wall -Wextra -Werror; 3 tools linked. Eleven concrete data classes including LevelDefinition/37 registered fields: owned module refs, warning records, narrow strings/reward enum, bools/int32 and signed16 StartingSun bit truncation. 282 added original ARM data-state checks. CurrentLevel package matches four local module links in Cowboy asset; all 5 declarations constructed, 16 nonempty external symbolic refs remain unresolved. Other three assets construct LevelDefinition+SeedBank (2/6 each). GameFeature element read declines in the selected original registration; preserve resized zero slots without claiming unlock values. No game lifecycle/rendering/audio, Android JNI engine, source-only APK, generic RTTI/UID/text RTID or arbitrary coercion/malformed-context parity. Round30 adds opt-in SunDropperProperties: 5 original ARM direct-field states /25 checkpoints; real source-only two-package integration increases module links 4 to 5, LevelModules factories 3/66. No sun generation gameplay or full two-package ARM graph comparison. Round31: bounded original ZombiesDeadWinCon readiness predicate, 15 ARM branch/callback cases; inherited-only win property factory/schema confirmed. Real source package integration 4->6 links, 4/66 LevelModules factories. No full Board or win event wiring. Round32 adds DangerRoomModuleProperties world/list owned reference fields: 8 ARM states, 77 field/identity checkpoints; original dtor release order traced, 3 separate host cleanup checks. Real packages 4->7 links, 5/66 external factories. No designer gameplay or full store/pool-state differential. Round33: opt-in brain boundary property default -80 and 8 ARM float states; real packages 4->8 links, 6/66 external factories. No movement/loss event logic.",
+  "full_game_source_build": false,
+  "cmake_path_tested": false,
+  "toolchain_initial_libunwind_attribute_warnings": true,
+  "artifacts": {
+    "build\\pvz2_profiles.lib": {
+      "bytes": 12798682,
+      "sha256": "130ccb0f3558737cf0e5fbd703f4242fc748008969bba83c452027c14d289023"
+    },
+    "build\\profile_tests.exe": {
+      "bytes": 994816,
+      "sha256": "f8f1d23bdb4ec02717baddf804f0fb4635c9da8320328013af1a45f1d56b6c4e"
+    },
+    "build\\dirty_tests.exe": {
+      "bytes": 799232,
+      "sha256": "5b46c6fee04e96aed0713c6a8fb633f2671d0d141191c3b5923b412a61a37020"
+    },
+    "build\\engine_handle_tests.exe": {
+      "bytes": 866304,
+      "sha256": "1680fb726cbf7bc38d8e9c24d907fd940a9b7afc3c28e1538f1820e40c63c4cc"
+    },
+    "build\\engine_registry_tests.exe": {
+      "bytes": 960512,
+      "sha256": "d666ce1a17578f8706ea173dbe1ed72904983deaaf86c68c813d5c73bb814db2"
+    },
+    "build\\engine_slot_tests.exe": {
+      "bytes": 1300480,
+      "sha256": "bf1ea4774ca84596cd0b0920a93bcab2a6a7e247ba1681829552fd0f8b8d6809"
+    },
+    "build\\descriptor_index_tests.exe": {
+      "bytes": 4204032,
+      "sha256": "8ff9f6a4d05e941eb79c19c10cfdce574371016a9c50d2d8be464ade3f8b22d6"
+    },
+    "build\\engine_intern_tests.exe": {
+      "bytes": 2207744,
+      "sha256": "a9fcfa892887adcd34a35d4eaa3806a4eb28de6ae5a6e03eb370f86d0b26cca0"
+    },
+    "build\\name_index_tests.exe": {
+      "bytes": 5323776,
+      "sha256": "205a72288f60d688b90ca1b4a7f308884afe7cb7cf0b421aae9b5fd5e3d5e6dd"
+    },
+    "build\\owned_store_tests.exe": {
+      "bytes": 2190848,
+      "sha256": "e5d31e44a094973dce531b4826c5b69111ea0d7d94551cfecbac43d08f872b7e"
+    },
+    "build\\store_package_tests.exe": {
+      "bytes": 2457088,
+      "sha256": "f5f99e1846864f510ca3ddee314a36444b828fb951aef1b37198c732b760b838"
+    },
+    "build\\rton_metadata_tests.exe": {
+      "bytes": 3129856,
+      "sha256": "8071879ca4c3ab46f1f73a88b3c6df375c78a9dd086517f7972bc6abc6d9a145"
+    },
+    "build\\rton_input_tests.exe": {
+      "bytes": 2411520,
+      "sha256": "9be4748055a319db4805b4ac31bde7f7b660291ac559bb6582989cebf40d146a"
+    },
+    "build\\rton_normalizer_tests.exe": {
+      "bytes": 2318848,
+      "sha256": "220950e253cd6426bdca7db58683b34142f96c91b25e5db6a859b0decbabcfa5"
+    },
+    "build\\rton_normalize.exe": {
+      "bytes": 1403392,
+      "sha256": "0a6441a2f428c66594482c3b4dad1a052eb82468dfc0b65ae518a9b918b090c9"
+    },
+    "build\\rton_reader_tests.exe": {
+      "bytes": 11493888,
+      "sha256": "763513262b8322593af40dc13a4e1e92859428f20bde967a63583ffaa8c18a3b"
+    },
+    "build\\rton_inspect.exe": {
+      "bytes": 1455616,
+      "sha256": "fc29210efcdd114c76f0d1bc4551146b2fca10d2cc5f8435dfac2df8c9dc5ea8"
+    },
+    "build\\rton_scalar_tests.exe": {
+      "bytes": 2271232,
+      "sha256": "4eb6e22f13c95ec27d05bdb8a5736204f80b80420e383f2ba5d3457435823076"
+    },
+    "build\\reflection_chain_tests.exe": {
+      "bytes": 3380736,
+      "sha256": "e4b480c54ed1b0539f281848d141ed9fbd3980170cbaf556eafd7dadd009d5ab"
+    },
+    "build\\rton_load_objects.exe": {
+      "bytes": 2424320,
+      "sha256": "000a6baa1ff2adcd0cd177b4b2cbb436bcd2906c198e5814e25564956b5b1fd0"
+    },
+    "build\\rton_float_tests.exe": {
+      "bytes": 2042880,
+      "sha256": "3460ec4967803d0a092b014eec9f3d0a8143dbcb15ec97f07baa1e4533645c82"
+    },
+    "build\\intro_reflection_tests.exe": {
+      "bytes": 3444736,
+      "sha256": "0a622fdf4160cb41921f4bc290582622e1bde5ee4ed0ffb653465e238afe1bc1"
+    },
+    "build\\railcart_reflection_tests.exe": {
+      "bytes": 4091392,
+      "sha256": "70192a017a495854a4f5a33ce9122859974bf6d12bd496df43cad527fc0b2a00"
+    },
+    "build\\seedbank_reflection_tests.exe": {
+      "bytes": 5359616,
+      "sha256": "46cf214f7dfe7a40823abcc242f093aec3e7da2776253c47e4ccb2660186b106"
+    },
+    "build\\wave_reflection_tests.exe": {
+      "bytes": 6682112,
+      "sha256": "986a345a55de5c6028ea8b3c30571125752b39f94230ece9b5b9d81fa64126da"
+    },
+    "build\\level_reflection_tests.exe": {
+      "bytes": 8702976,
+      "sha256": "710a35d495033ae17612f4a479c16c3aa38179dae062de5a2f929965c05ee153"
+    },
+    "build\\sundropper_tests.exe": {
+      "bytes": 2320896,
+      "sha256": "9385fa75e4df5345e74b85cef2596bec421afc10f52375005efc9eb4b0e619ba"
+    },
+    "build\\sundropper_package_tests.exe": {
+      "bytes": 2351616,
+      "sha256": "10d3969abbc80de1f0dbc1ba797688d7300bc8bbb51c41bb619d5cb0b1563818"
+    },
+    "build\\win_condition_tests.exe": {
+      "bytes": 909824,
+      "sha256": "fab5b514acb4839e845b6ae3ca0e48692ccc8932f16774ed19599a14c4c6a13a"
+    },
+    "build\\win_package_tests.exe": {
+      "bytes": 2351616,
+      "sha256": "0298463f591149c44ca6fc8f551e6c5718d5044aeb9e91f8689ba234773d3717"
+    },
+    "build\\danger_module_tests.exe": {
+      "bytes": 2351104,
+      "sha256": "5777d651d11718ed3d497801cb2b2117866a01573d21c5e6941d55913b663c46"
+    },
+    "build\\danger_package_tests.exe": {
+      "bytes": 2351616,
+      "sha256": "f088f7e08b5c9ad46b1d38b4768717e4a6f0d55423dcc2becc4350e691c085d0"
+    },
+    "build\\brain_properties_tests.exe": {
+      "bytes": 2320384,
+      "sha256": "ee692cda3d9dd1e2528cc9e7c92c864a1a59346a411337ce545d2d4f08a895c0"
+    },
+    "build\\brain_package_tests.exe": {
+      "bytes": 2351616,
+      "sha256": "b19fb368c632b152eb468eef209fcae2f867fc00027232e0b8362ff31f1832cc"
+    }
+  },
+  "round": 33,
+  "execution_exit_codes": {
+    "profile_tests.exe": 0,
+    "dirty_tests.exe": 0,
+    "engine_handle_tests.exe": 0,
+    "engine_registry_tests.exe": 0,
+    "engine_slot_tests.exe": 0,
+    "descriptor_index_tests.exe": 0,
+    "engine_intern_tests.exe": 0,
+    "name_index_tests.exe": 0,
+    "owned_store_tests.exe": 0,
+    "store_package_tests.exe": 0,
+    "rton_metadata_tests.exe": 0,
+    "rton_input_tests.exe": 0,
+    "rton_normalizer_tests.exe": 0,
+    "rton_normalize.exe": 0,
+    "rton_reader_tests.exe": 0,
+    "rton_inspect.exe": 0,
+    "rton_scalar_tests.exe": 0,
+    "reflection_chain_tests.exe": 0,
+    "rton_load_objects.exe": 0,
+    "rton_float_tests.exe": 0,
+    "intro_reflection_tests.exe": 0,
+    "railcart_reflection_tests.exe": 0,
+    "seedbank_reflection_tests.exe": 0,
+    "wave_reflection_tests.exe": 0,
+    "level_reflection_tests.exe": 0,
+    "sundropper_tests.exe": 0,
+    "sundropper_package_tests.exe": 0,
+    "win_condition_tests.exe": 0,
+    "win_package_tests.exe": 0,
+    "danger_module_tests.exe": 0,
+    "danger_package_tests.exe": 0,
+    "brain_properties_tests.exe": 0,
+    "brain_package_tests.exe": 0
+  },
+  "recovered_semantic_operations": 116,
+  "original_arm_dirty_cases": 16,
+  "dirty_services_implementation": "Controlled test backend; full engine services not recovered",
+  "original_arm_engine_cases": 37,
+  "engine_arm_cpp_differential_cases": 37,
+  "engine_integrated_into_game": false,
+  "original_arm_registry_cases": 138,
+  "registry_arm_cpp_differential_cases": 138,
+  "total_cpp_checks": 45591,
+  "registry_integrated_into_game": false,
+  "registry_original_functions": [
+    "011e7570",
+    "011e6840",
+    "011e6890",
+    "011e6a90",
+    "011e761c",
+    "001ea034"
+  ],
+  "original_arm_slot_scenarios": 85,
+  "original_arm_slot_checkpoints": 632,
+  "slot_arm_cpp_differential_checkpoints": 632,
+  "owned_slot_integration_checks": 8,
+  "slot_integrated_into_game": false,
+  "slot_link_representation": "Stable host slot indices and four sentinel tokens; not ARM32 addresses",
+  "slot_descriptor_container_implementation": "Recovered DescriptorIndex with original red-black insertion, hints, rotations and erase fixup; std::map descriptor adapter removed",
+  "slot_recovered_original_functions": [
+    "011e5f08",
+    "011e60e8",
+    "011e6168",
+    "011e6424",
+    "011e6450",
+    "011e6600",
+    "011e66cc",
+    "011e66f0",
+    "011e6740",
+    "011e6778",
+    "011e67b8",
+    "011e67dc",
+    "011e681c",
+    "011e6b0c",
+    "011ed120",
+    "011f173c"
+  ],
+  "original_arm_descriptor_tree_scenarios": 270,
+  "original_arm_descriptor_tree_checkpoints": 3995,
+  "descriptor_tree_arm_cpp_exact_state_checkpoints": 3995,
+  "descriptor_tree_state_comparison": "All normalized header/node color, parent/child link, key, value and count integers compared directly; no state hashes",
+  "descriptor_tree_function_entry_hits": {
+    "lower_bound": 4433,
+    "unique_position": 781,
+    "hinted_position": 2258,
+    "insert_node": 2258,
+    "rotate_left": 710,
+    "rotate_right": 331,
+    "previous": 747,
+    "next": 223,
+    "previous_wrapper": 747,
+    "insert_rebalance": 1976,
+    "erase_rebalance": 1072
+  },
+  "descriptor_tree_deletion_shapes": {
+    "leaf-red": 267,
+    "right-black": 78,
+    "leaf-black": 373,
+    "two-black": 207,
+    "left-black": 89,
+    "two-red": 58
+  },
+  "descriptor_tree_integrated_into_slot_tests": true,
+  "descriptor_tree_recovered_original_functions": [
+    "011e5b08",
+    "011ecc78",
+    "011ecdc8",
+    "011ecff0",
+    "014e2c4c",
+    "014e2c7c",
+    "014e2cac",
+    "014e2cf0",
+    "014e2d78",
+    "014e2e64"
+  ],
+  "descriptor_tree_wrapper_entry": "014e2d58 (inlined previous-node wrapper, not counted as a separate semantic operation)",
+  "original_arm_intern_scenarios": 35,
+  "original_arm_intern_checkpoints": 1240,
+  "intern_arm_cpp_full_state_checkpoints": 1240,
+  "original_cow_wide_assign_calls": 460,
+  "intern_function_entry_hits": {
+    "singleton": 1321,
+    "intern": 357,
+    "ensure": 353,
+    "lookup": 457,
+    "tree_lookup": 670,
+    "retain": 425,
+    "retain_raw": 476,
+    "release": 160,
+    "release_raw": 469,
+    "recycle": 213,
+    "text": 426,
+    "table_grow": 72,
+    "position": 48,
+    "insert": 247,
+    "acquire": 265,
+    "assign": 56,
+    "drop": 258,
+    "handle": 12,
+    "canonical": 3,
+    "resolve": 1
+  },
+  "intern_recovered_core_functions": [
+    "011f2d28",
+    "011f1d88",
+    "011f1df8",
+    "011f125c",
+    "011f1ed4",
+    "011f1e38",
+    "011f14cc",
+    "011f2808",
+    "011f2aa8",
+    "011f2b5c",
+    "00594184",
+    "00158a20"
+  ],
+  "intern_covered_wrapper_entries": [
+    "011f2ed8",
+    "011f153c",
+    "011f1f08",
+    "001589f0"
+  ],
+  "intern_initialization": "Explicit InternPool owner initialized from 011f13a8 structure evidence; global singleton publication/destruction/threading not restored",
+  "intern_string_storage": "Host std::u32string and ID text tokens; original Android COW ABI/raw text pointers not reproduced",
+  "intern_integrated_into_handle_chain": true,
+  "intern_integrated_into_game": false,
+  "shared_tree_algorithms": "recovered_rb_tree.hpp; descriptor and intern indices share next/previous/rotations/insert/erase balancing",
+  "original_arm_name_scenarios": 200,
+  "original_arm_name_checkpoints": 4230,
+  "name_arm_cpp_full_state_checkpoints": 4230,
+  "dynamic_registry_integration_checks": 12,
+  "name_function_entry_hits": {
+    "find": 3694,
+    "type_position": 416,
+    "type_insert": 702,
+    "type_clear": 490,
+    "object_position": 446,
+    "object_hint": 1023,
+    "object_insert": 706,
+    "link": 889,
+    "object_clear": 539,
+    "bind": 509,
+    "ensure": 336,
+    "reserve": 23,
+    "append": 23,
+    "canonical": 347,
+    "resolve": 173,
+    "lookup": 514
+  },
+  "name_index_recovered_core_functions": [
+    "011ea54c",
+    "011ebbec",
+    "011ebc9c",
+    "011eab1c",
+    "011ed354",
+    "011ed404",
+    "011ed520",
+    "011ead38",
+    "011ea120",
+    "011ee270",
+    "011eefb0"
+  ],
+  "name_factory_context_helpers": [
+    "011e7cb4",
+    "011eab5c (verified within registry growth, not counted as complete generic vector recovery)"
+  ],
+  "name_index_impl": "TypeNameIndex/ObjectNameIndex use recovered unsigned-key hint/unique insertion and shared RB algorithms; object-name nodes own intern references, type-name nodes do not",
+  "name_binding_order": "Erase old alias first; null handle succeeds, invalid new handle fails after erase, valid handle copies slot descriptor",
+  "registry_bank_constructor_boundary": "Explicit host owner; real game classes/RTTI remain external",
+  "type_constructor_complete": false,
+  "name_indices_integrated_into_handle_chain": true,
+  "name_indices_integrated_into_game": false,
+  "original_arm_owned_store_scenarios": 32,
+  "original_arm_owned_store_checkpoints": 359,
+  "owned_store_arm_cpp_full_state_checkpoints": 359,
+  "owned_store_function_entry_hits": {
+    "construct": 44,
+    "remove": 44,
+    "reset": 135,
+    "ensure": 52,
+    "forward": 182,
+    "package": 44,
+    "create": 71,
+    "bind": 62,
+    "resolve": 68,
+    "release": 30,
+    "retain": 6,
+    "drain": 52
+  },
+  "owned_store_recovered_core_functions": [
+    "011ec764",
+    "011ea17c",
+    "011ec274",
+    "011e5c80"
+  ],
+  "owned_registry_implementation": "Concrete metadata owner with reset, forwarding and package-aware teardown",
+  "store_metadata_constructor_verified": true,
+  "store_teardown_package_scope": "Nonempty packages, alias collisions and caller-path release verified",
+  "default_descriptor_seed_source": "Registry +0x18, explicit seed input to OwnedRegistry; not store name ID. Original global clock/singleton initialization not reproduced",
+  "owned_store_integrated_into_game": false,
+  "original_arm_package_scenarios": 92,
+  "package_arm_cpp_checkpoints": 462,
+  "package_function_entry_hits": {
+    "normalize": 100,
+    "filename": 139,
+    "effective": 362,
+    "directory": 189,
+    "basename": 189,
+    "base_pointer": 189,
+    "last_set": 352,
+    "narrow": 199,
+    "widen": 199,
+    "package": 162
+  },
+  "original_arm_rton_metadata_scenarios": 23,
+  "rton_metadata_arm_cpp_byte_cache_checkpoints": 480,
+  "rton_metadata_function_entry_hits": {
+    "metadata": 72,
+    "integer": 173,
+    "string": 863,
+    "cached": 740,
+    "wide": 90,
+    "varuint": 1233,
+    "raw_string": 505,
+    "raw_wide": 90,
+    "codepoint": 680,
+    "append": 5110
+  },
+  "rton_writer_recovered_core_functions": [
+    "011e6b70",
+    "01200a88",
+    "01200230",
+    "012000d4",
+    "011fd650",
+    "011fdb58",
+    "011fd9d4",
+    "011fd77c"
+  ],
+  "rton_writer_covered_entries": [
+    "01205280 mode=0 only",
+    "011fd5c8 fixed caller buffer branch only"
+  ],
+  "rton_writer_cache_boundary": "Host logical narrow-key/index cache; compare all bytes and sorted entries/counter, not original RB topology or ABI",
+  "rton_writer_stream_boundary": "Host append-only byte vector; actual original fixed caller buffer writes exercised; no dynamic original stream growth, count-only stream, file IO, document roots, wide-cache mode or object payload",
+  "rton_reader_complete": false,
+  "original_arm_rton_input_scenarios": 466,
+  "rton_input_arm_cpp_value_position_checkpoints": 2140,
+  "rton_input_function_entry_hits": {
+    "read": 15090,
+    "var32": 630,
+    "var64": 500,
+    "zig32": 266,
+    "zig64": 250,
+    "narrow": 14,
+    "wide": 8,
+    "codepoint": 2134,
+    "utf8": 34,
+    "decode": 2464,
+    "header": 24
+  },
+  "rton_input_recovered_core_functions": [
+    "011f83b0",
+    "011f83f0",
+    "011f8440",
+    "011f84b4",
+    "011f84d0",
+    "011f8508",
+    "011f8554",
+    "011f85a0",
+    "011f8624",
+    "01141fb4",
+    "011f873c"
+  ],
+  "rton_input_stream_boundary": "Host-owned byte buffer; original external-buffer and vector-backed input both exercised; original pointers/COW ABI not reproduced. Raw out-of-bounds reads/seek throw in host, original requires valid caller bounds.",
+  "rton_utf8_rules": "Original decoder accepts selected 4/5-byte values beyond modern Unicode range, rejects surrogates/FFFE/FFFF/overlong/6-byte inputs; failure leaves position/output unchanged. UTF8 string ignores declared encoded size and loops character count.",
+  "rton_input_writer_integration": "Six original-writer-to-original-reader scenarios; host writer reproduces exact captured bytes before host reader compares returned units/positions.",
+  "rton_raw_to_internal_conversion_complete": false,
+  "original_arm_rton_normalizer_scenarios": 466,
+  "rton_normalizer_arm_cpp_byte_table_checkpoints": 466,
+  "rton_normalizer_function_entry_hits": {
+    "normalize": 466,
+    "container": 1029,
+    "token": 3671,
+    "reference_wire": 215
+  },
+  "rton_normalizer_recovered_core_functions": [
+    "01202a74",
+    "012028a0",
+    "01201398"
+  ],
+  "rton_reference_wire_covered_helper": "011f4394 fresh-descriptor read/re-emit wire output; global transient intern IDs/references/free-list side effects not reproduced or claimed as a complete owner API",
+  "rton_raw_to_internal_conversion_recovered": true,
+  "rton_conversion_scope": "Fresh logical output, raw version1/format0 to internal format1: byte-accurate numeric/string/cache/object/array/blob/reference conversion. Original stream reuse/ABI/global interning side effects not restored. Original raw input bounds and text object keys are preconditions. Host recursion limit512 and patch offset limit32MiB.",
+  "rton_normalizer_cache_boundary": "Logical sorted narrow/wide text-offset tables, host linear lookup; original tree topology/pointers/COW and bit-vector allocation state not compared",
+  "rton_normalizer_array_backpatch": "Separate storage/cursor preserves writes beyond current logical end, ffffffff unknown counts and mismatching count overwrite output; byte equality does not assert field navigability",
+  "rton_native_cli_resource_count": 4,
+  "rton_native_cli_resource_exit_codes": {
+    "resource-1": 0,
+    "resource-2": 0,
+    "resource-3": 0,
+    "resource-4": 0
+  },
+  "rton_native_cli_resource_exact_arm_matches": true,
+  "rton_resource_decryption_recovered": false,
+  "test_program_count": 30,
+  "utility_program_count": 3,
+  "original_arm_indexed_reader_scenarios": 44,
+  "indexed_reader_arm_cpp_return_cursor_checkpoints": 19396,
+  "indexed_reader_function_entry_hits": {
+    "peek": 4694,
+    "key_text": 866,
+    "value": 966,
+    "narrow_text": 1706,
+    "is_object": 1622,
+    "first": 1962,
+    "next": 866,
+    "is_array": 1622,
+    "count": 1936,
+    "element": 4540,
+    "find": 3266
+  },
+  "indexed_reader_recovered_core_functions": [
+    "011f87d8",
+    "011f884c",
+    "011f8920",
+    "011fa28c",
+    "011fc08c",
+    "011fc0c0",
+    "011fc124",
+    "011fc208",
+    "011fc23c",
+    "011fc2ac",
+    "011fdd64"
+  ],
+  "indexed_reader_covered_wrapper": "011f8818 reader view initialization executes original 011f873c header check; not counted as another core semantic operation",
+  "rton_field_navigation_recovered": true,
+  "rton_scalar_coercion_complete": false,
+  "rton_reflection_class_factory_complete": false,
+  "indexed_reader_scope": "Valid normalized documents and indices; exact return offsets/cursor/root. Null guards, inline/reference narrow/wide key pointers, object iteration, narrow global-table name lookup, arrays and narrow string value pointers. Host owns document/logical maps and independent cursor; original pointer/COW/tree ABI/shared-view cursor/concurrency/allocator failure not reproduced.",
+  "indexed_reader_name_lookup": "Narrow global string table only; globally missing name preserves cursor, globally present but absent from object scans through terminator; first duplicate wins; no automatic wide/narrow name conversion.",
+  "rton_native_inspection_resource_count": 4,
+  "rton_native_inspection_declared_objects": 23,
+  "rton_native_inspection_exit_codes": {
+    "resource-1": 0,
+    "resource-2": 0,
+    "resource-3": 0,
+    "resource-4": 0
+  },
+  "rton_native_inspection_exact_arm_summaries": true,
+  "original_arm_scalar_scenarios": 2514,
+  "rton_scalar_arm_cpp_bits_cursor_checkpoints": 7542,
+  "rton_scalar_function_entry_hits": {
+    "i32": 2514,
+    "u32": 2514,
+    "boolean": 2514,
+    "wide_decimal": 116
+  },
+  "rton_scalar_partial_entries": [
+    "011f8d6c non-RTID int32 branches",
+    "011f9070 non-RTID uint32 branches",
+    "011f8a24 non-RTID boolean branches",
+    "011f1288 low-byte wide decimal path within signed32 text domain"
+  ],
+  "rton_scalar_scope": "Covered non-reference branches only, no added complete-function count. Original soft-float helpers execute for signed/unsigned saturation and NaN/infinity cases. External atoi/strtol use controlled actual 32-bit host CRT in C locale and signed32 input range; Android overflow/locale parity excluded. Host RTID coercion and out-of-range decimal text explicitly throw.",
+  "rton_version_tool_check": {
+    "resources": 4,
+    "versions": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "exact_arm_summary_matches": true
+  },
+  "original_arm_reflection_operations": 32,
+  "reflection_arm_cpp_full_state_checkpoints": 54,
+  "reflection_function_entry_hits": {
+    "register": 2,
+    "lookup": 31,
+    "ancestry": 495,
+    "factory": 25,
+    "create_pass": 23,
+    "fill_pass": 23,
+    "properties": 27,
+    "enum_read": 18,
+    "reference_property": 23,
+    "reference_read": 23,
+    "resolve": 109
+  },
+  "reflection_class_directory_recovered_functions": [
+    "011f761c",
+    "011f6120",
+    "011f595c"
+  ],
+  "reflection_supported_data_classes": [
+    "EntityComponent_GroundEffect",
+    "GameObject",
+    "PropertySheetBase",
+    "LevelModuleProperties",
+    "IntroModuleProperties",
+    "StandardLevelIntroProperties",
+    "DangerRoomLevelIntroProperties",
+    "RailcartProperties",
+    "SeedBankProperties",
+    "WaveGeneratorProperties",
+    "LevelDefinition"
+  ],
+  "reflection_properties": [
+    {
+      "name": "m_type",
+      "offset": 8
+    },
+    {
+      "name": "m_effect",
+      "offset": 16
+    }
+  ],
+  "reflection_class_factory_complete": false,
+  "reflection_scoped_entries": [
+    "Eleven selected original factories: initialized reflected fields, no ARM vtable/game behavior",
+    "011ed5fc version1/no explicit UID/eleven selected concrete data classes",
+    "011ead94 and 011b9bb0 selected weak-reference/string-list/float/int/boolean/nested-record fields",
+    "011b1de0 non-flags GroundEffectType and SeedBank SelectionMethod narrow-text enums; decimal fallback within signed32",
+    "011b7180/011fb300/011f4c90 binary weak RTID reads 0..3 and bounded vector/string/record reads",
+    "011f8a24 non-reference boolean coercion used by three SeedBank bool properties",
+    "011f9ae8 numeric/common narrow decimal float32 branches; wide/RTID/special-text excluded",
+    "008a297c/008a1e30 record resize/defaults, not allocation capacity ABI",
+    "009c4c70 WaveGeneratorProperties initialized reflected defaults and owned HeroTypes/DefaultHeroLevelProps symbolic ref",
+    "Wave nested value read schemas: event, wave, ZombieSpawn, ZombiePool, SeedPool; valid array containers and narrow Row enum",
+    "009c7a18/009c78b4/009c7710 logical owned-ref teardown order: forward elements, reverse nested field order; no allocator ABI",
+    "SpawnCount +0x58 original factory uninitialized: optional until actual property write, never a heap-fill default",
+    "00442f3c/0044401c LevelDefinition selected data construction and owned-reference teardown",
+    "LevelDefinition 37 registered fields; StartingSun signed16 low bits; reward narrow enum; warning Type/Text/Level",
+    "GameFeaturesToUnlock unresolved original GameFeature read 011ab2bc returns false: vector resize/zero slots only, no unlock semantics"
+  ],
+  "reflection_shared_pool_normalization": true,
+  "reflection_alias_policy": "Loaded duplicate alias first wins via insert_unique; generic bind_name retains original erase/overwrite policy",
+  "reflection_bootstrap_boundary": "Explicit host metadata tokens/two logical system stores; twelve class-directory entries after optional LevelDefinition registration. LevelDefinition parent is PropertySheetBase, with no inherited ResourceGroupNames. Original generic reflection/schema ABI and game callbacks are not implemented. Original GameObject post-read notification runs against an empty _INIT_134 bus; event state, COW identity, private words, padding and allocator capacities excluded.",
+  "reflection_reference_scope": "Relative/current package, explicit package, descriptor and symbolic binary RTID reads; shared intern ownership and existing canonical resolver. RTID text parser, write path and arbitrary value coercions excluded.",
+  "reflection_validation_scope": "32 continuous operations/54 full states: class order/inheritance, entire intern entries/capacity/lists/tree, full two game-store slots/indices, initialized object fields and resolved identities. Factory/registration/property/codec/resolve all execute original ARM. Low-level allocation/libc/C-locale ASCII ctype/single-thread pthread controlled; pthread_once callbacks really execute. Metadata/symbol-table physical ABI and original padding not compared.",
+  "reflection_native_example": {
+    "example": "example/cyclic.raw.rton",
+    "example_origin": "Focused schema-derived fixture, not extracted full level",
+    "supported_data_class": "EntityComponent_GroundEffect",
+    "objects_created": 2,
+    "exact_arm_graph_match": true,
+    "cli_exit_code": 0,
+    "output_sha256": "b0c58605e9eb5efa777a28da6864d256f5951ef9e89f4519313815b77c1a5247",
+    "original_engine_library_required": false,
+    "game_behavior_executed": false
+  },
+  "intro_reflection_arm_cpp_full_state_checkpoints": 50,
+  "intro_reflection_original_operations": 34,
+  "intro_reflection_function_entry_hits": {
+    "register": 8,
+    "lookup": 41,
+    "ancestry": 4131,
+    "ground_factory": 5,
+    "game_factory": 2,
+    "sheet_factory": 2,
+    "module_factory": 2,
+    "intro_factory": 2,
+    "standard_factory": 2,
+    "danger_factory": 10,
+    "create_pass": 17,
+    "fill_pass": 19,
+    "properties": 31,
+    "custom_property": 48,
+    "float_read": 17,
+    "int_read": 26,
+    "reference_read": 16,
+    "resolve": 108,
+    "game_serialize": 23
+  },
+  "intro_reflection_schemas": {
+    "RtObject": [],
+    "EntityComponent_GroundEffect": [
+      {
+        "name": "m_type",
+        "offset": 8
+      },
+      {
+        "name": "m_effect",
+        "offset": 16
+      }
+    ],
+    "GameObject": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      }
+    ],
+    "PropertySheetBase": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      }
+    ],
+    "LevelModuleProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      }
+    ],
+    "IntroModuleProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      }
+    ],
+    "StandardLevelIntroProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "PanStartOffset",
+        "offset": 28
+      },
+      {
+        "name": "PanEndOffset",
+        "offset": 32
+      },
+      {
+        "name": "PanRightDuration",
+        "offset": 36
+      },
+      {
+        "name": "PanLeftDuration",
+        "offset": 40
+      },
+      {
+        "name": "NarrationID",
+        "offset": 44
+      },
+      {
+        "name": "SubsequentPlayNarrationID",
+        "offset": 48
+      }
+    ],
+    "DangerRoomLevelIntroProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "PanStartOffset",
+        "offset": 28
+      },
+      {
+        "name": "PanEndOffset",
+        "offset": 32
+      },
+      {
+        "name": "PanRightDuration",
+        "offset": 36
+      },
+      {
+        "name": "PanLeftDuration",
+        "offset": 40
+      },
+      {
+        "name": "NarrationID",
+        "offset": 44
+      },
+      {
+        "name": "SubsequentPlayNarrationID",
+        "offset": 48
+      }
+    ]
+  },
+  "intro_reflection_scope": "Real manager/schema callbacks, all seven selected original constructors, both original load passes and property/ref dispatch execute; compare class order/all ancestry pairs, whole intern state, both game-store slot/index trees, live/dead object tokens, all initialized reflected fields and resolved references. String vectors compare logical contents, not allocator capacity/COW identity. Original padding, vtable ABI and physical global metadata/schema symbol table excluded. GameObject Serialize executes its real post-read event path against an empty bus seeded from _INIT_134; no game subscribers. The host data adapter does not implement the event bus, callbacks or game behavior, and event-bus state is excluded. ASCII alias/narrow string list, no explicit UID/text RTID; float decimal C-library boundary controlled, wide/special text excluded. Real resource1 loads 1/5 objects because four game classes remain unsupported; this is not a whole-level/gameplay run.",
+  "all_reflection_arm_cpp_full_state_checkpoints": 802,
+  "rton_float_arm_cpp_bits_cursor_checkpoints": 3462,
+  "rton_float_partial_entry": "011f9ae8 numeric/narrow-decimal float32 getter; not counted as another completely restored function",
+  "rton_float_scope": "Round 25: original float32 getter, numeric and narrow decimal branches.\n\nThe original ARM soft-float helpers execute. Decimal strtod is the controlled\nhost C runtime; hex/NaN/infinity text, wide swscanf, RTID and cross-libc\nspecial-text/locale parity excluded.\n",
+  "intro_native_cli_validation": {
+    "executable_sha256": "ccd26c552e03781207f763cc0080f168c060fc3caf94bed99aada6ba927b5845",
+    "profile": "--intro-only (round 25 seven-class profile)",
+    "original_engine_library_required": false,
+    "data_only": true,
+    "game_behavior_executed": false,
+    "examples": [
+      {
+        "example": "mixed-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round25\\intro_reflection\\example\\mixed-cycle.cpp.objects.json",
+        "output_sha256": "da2b24017f4a4396754988deb4efa45eec945abe830581021436aec85c19896a",
+        "stdout": "Created 2 of 2 data objects; 7 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "cowboy-dangerroom",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 1,
+        "declarations": 5,
+        "output": "native_analysis\\core_round25\\intro_reflection\\example\\cowboy-dangerroom.cpp.objects.json",
+        "output_sha256": "032bb7983163a7cb81bdc5bcb486c42735207473662534f2cac7c46147d55afc",
+        "stdout": "Created 1 of 5 data objects; 7 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_enable\\COWBOY_DANGERROOM.RTON",
+          "plaintext_sha256": "0b59e3272b33cf4006c0c308fb4fb8798f59663b815bdbc0e1c2f1df1e9d427a"
+        }
+      },
+      {
+        "example": "cyclic",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round24\\reflection_chain\\example\\cyclic.cpp.objects.json",
+        "output_sha256": "b0c58605e9eb5efa777a28da6864d256f5951ef9e89f4519313815b77c1a5247",
+        "stdout": "Created 2 of 2 data objects; 7 supported concrete data classes",
+        "stderr": ""
+      }
+    ],
+    "scope": "Unchanged asset plaintexts and focused schema-derived graphs. Exit 0 means all declarations have supported factories; it does not assert all external references resolve or game behavior runs. Unsupported declarations remain null and CLI returns 3 for a partial load."
+  },
+  "railcart_reflection_arm_cpp_full_state_checkpoints": 80,
+  "railcart_reflection_original_operations": 54,
+  "railcart_reflection_function_entry_hits": {
+    "register": 9,
+    "lookup": 58,
+    "ancestry": 8100,
+    "ground_factory": 5,
+    "game_factory": 2,
+    "sheet_factory": 2,
+    "module_factory": 2,
+    "intro_factory": 2,
+    "standard_factory": 2,
+    "danger_factory": 15,
+    "create_pass": 27,
+    "fill_pass": 38,
+    "properties": 151,
+    "custom_property": 101,
+    "float_read": 19,
+    "int_read": 149,
+    "reference_read": 23,
+    "resolve": 200,
+    "game_serialize": 54,
+    "railcart_factory": 9,
+    "rail_resize": 13,
+    "cart_resize": 13
+  },
+  "railcart_reflection_schemas": {
+    "RtObject": [],
+    "EntityComponent_GroundEffect": [
+      {
+        "name": "m_type",
+        "offset": 8
+      },
+      {
+        "name": "m_effect",
+        "offset": 16
+      }
+    ],
+    "GameObject": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      }
+    ],
+    "PropertySheetBase": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      }
+    ],
+    "LevelModuleProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      }
+    ],
+    "IntroModuleProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      }
+    ],
+    "StandardLevelIntroProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "PanStartOffset",
+        "offset": 28
+      },
+      {
+        "name": "PanEndOffset",
+        "offset": 32
+      },
+      {
+        "name": "PanRightDuration",
+        "offset": 36
+      },
+      {
+        "name": "PanLeftDuration",
+        "offset": 40
+      },
+      {
+        "name": "NarrationID",
+        "offset": 44
+      },
+      {
+        "name": "SubsequentPlayNarrationID",
+        "offset": 48
+      }
+    ],
+    "DangerRoomLevelIntroProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "PanStartOffset",
+        "offset": 28
+      },
+      {
+        "name": "PanEndOffset",
+        "offset": 32
+      },
+      {
+        "name": "PanRightDuration",
+        "offset": 36
+      },
+      {
+        "name": "PanLeftDuration",
+        "offset": 40
+      },
+      {
+        "name": "NarrationID",
+        "offset": 44
+      },
+      {
+        "name": "SubsequentPlayNarrationID",
+        "offset": 48
+      }
+    ],
+    "RailcartProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "RailcartType",
+        "offset": 28
+      },
+      {
+        "name": "Rails",
+        "offset": 32
+      },
+      {
+        "name": "Railcarts",
+        "offset": 44
+      }
+    ]
+  },
+  "railcart_reflection_scope": "Real manager/schema callbacks, all eight selected original constructors, both original load passes and property/ref dispatch execute; compare class order/all ancestry pairs, whole intern state, both game-store slot/index trees, live/dead object tokens, all initialized reflected fields and resolved references. String vectors compare logical contents, not allocator capacity/COW identity. Original padding, vtable ABI and physical global metadata/schema symbol table excluded. GameObject Serialize executes its real post-read event path against an empty bus seeded from _INIT_134; no game subscribers. The host data adapter does not implement the event bus, callbacks or game behavior, and event-bus state is excluded. ASCII alias/narrow string list, no explicit UID/text RTID; float decimal C-library boundary controlled, wide/special text excluded. Real resource1 loads 2/5 objects because three game classes remain unsupported; this is not a whole-level/gameplay run. RailcartType narrow/C-string text plus nested Rails/Railcarts int records; resize preserves existing fields, new entries initialize to -1, nonobjects preserve resized entries. Vector capacities excluded. Selected nonarray-vector following-field scope fallbacks compared; host does not implement the whole original serializer scope stack or arbitrary malformed-context propagation.",
+  "railcart_native_cli_validation": {
+    "executable_sha256": "ccd26c552e03781207f763cc0080f168c060fc3caf94bed99aada6ba927b5845",
+    "profile": "--railcart-only (round 26 eight-class profile)",
+    "original_engine_library_required": false,
+    "data_only": true,
+    "game_behavior_executed": false,
+    "examples": [
+      {
+        "example": "mixed-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round26\\railcart_reflection\\example\\mixed-cycle.cpp.objects.json",
+        "output_sha256": "da2b24017f4a4396754988deb4efa45eec945abe830581021436aec85c19896a",
+        "stdout": "Created 2 of 2 data objects; 8 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "cowboy-dangerroom",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 5,
+        "output": "native_analysis\\core_round26\\railcart_reflection\\example\\cowboy-dangerroom.cpp.objects.json",
+        "output_sha256": "ea8cfa83c7024cea44668393fdd954ea4be900d66974c1559879ce623799e8ba",
+        "stdout": "Created 2 of 5 data objects; 8 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_enable\\COWBOY_DANGERROOM.RTON",
+          "plaintext_sha256": "0b59e3272b33cf4006c0c308fb4fb8798f59663b815bdbc0e1c2f1df1e9d427a"
+        }
+      },
+      {
+        "example": "cyclic",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round24\\reflection_chain\\example\\cyclic.cpp.objects.json",
+        "output_sha256": "b0c58605e9eb5efa777a28da6864d256f5951ef9e89f4519313815b77c1a5247",
+        "stdout": "Created 2 of 2 data objects; 8 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "railcart-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round26\\railcart_reflection\\example\\railcart-cycle.cpp.objects.json",
+        "output_sha256": "3af16d3cef1ea34887f887260b200dde2182dab3f21d11d89a8d919b2ace6afb",
+        "stdout": "Created 2 of 2 data objects; 8 supported concrete data classes",
+        "stderr": ""
+      }
+    ],
+    "scope": "Unchanged asset plaintexts and focused schema-derived graphs. Exit 0 means all declarations have supported factories; it does not assert all external references resolve or game behavior runs. Unsupported declarations remain null and CLI returns 3 for a partial load."
+  },
+  "actual_cowboy_asset_data_objects_supported": {
+    "created": 5,
+    "declarations": 5,
+    "remaining_classes": [],
+    "origin": {
+      "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_enable\\COWBOY_DANGERROOM.RTON",
+      "plaintext_sha256": "0b59e3272b33cf4006c0c308fb4fb8798f59663b815bdbc0e1c2f1df1e9d427a"
+    },
+    "all_declarations_constructed": true,
+    "local_module_links": 4,
+    "unresolved_symbolic_references": 16,
+    "whole_level_supported": false
+  },
+  "seedbank_reflection_arm_cpp_full_state_checkpoints": 139,
+  "seedbank_reflection_original_operations": 86,
+  "seedbank_reflection_function_entry_hits": {
+    "register": 10,
+    "lookup": 108,
+    "ancestry": 16940,
+    "ground_factory": 5,
+    "game_factory": 2,
+    "sheet_factory": 2,
+    "module_factory": 2,
+    "intro_factory": 2,
+    "standard_factory": 2,
+    "danger_factory": 19,
+    "create_pass": 54,
+    "fill_pass": 69,
+    "properties": 193,
+    "custom_property": 254,
+    "float_read": 19,
+    "int_read": 181,
+    "reference_read": 31,
+    "resolve": 359,
+    "game_serialize": 94,
+    "railcart_factory": 10,
+    "rail_resize": 14,
+    "cart_resize": 14,
+    "seedbank_factory": 29,
+    "enum_read": 20,
+    "boolean_read": 26
+  },
+  "seedbank_reflection_schemas": {
+    "RtObject": [],
+    "EntityComponent_GroundEffect": [
+      {
+        "name": "m_type",
+        "offset": 8
+      },
+      {
+        "name": "m_effect",
+        "offset": 16
+      }
+    ],
+    "GameObject": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      }
+    ],
+    "PropertySheetBase": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      }
+    ],
+    "LevelModuleProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      }
+    ],
+    "IntroModuleProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      }
+    ],
+    "StandardLevelIntroProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "PanStartOffset",
+        "offset": 28
+      },
+      {
+        "name": "PanEndOffset",
+        "offset": 32
+      },
+      {
+        "name": "PanRightDuration",
+        "offset": 36
+      },
+      {
+        "name": "PanLeftDuration",
+        "offset": 40
+      },
+      {
+        "name": "NarrationID",
+        "offset": 44
+      },
+      {
+        "name": "SubsequentPlayNarrationID",
+        "offset": 48
+      }
+    ],
+    "DangerRoomLevelIntroProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "PanStartOffset",
+        "offset": 28
+      },
+      {
+        "name": "PanEndOffset",
+        "offset": 32
+      },
+      {
+        "name": "PanRightDuration",
+        "offset": 36
+      },
+      {
+        "name": "PanLeftDuration",
+        "offset": 40
+      },
+      {
+        "name": "NarrationID",
+        "offset": 44
+      },
+      {
+        "name": "SubsequentPlayNarrationID",
+        "offset": 48
+      }
+    ],
+    "RailcartProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "RailcartType",
+        "offset": 28
+      },
+      {
+        "name": "Rails",
+        "offset": 32
+      },
+      {
+        "name": "Railcarts",
+        "offset": 44
+      }
+    ],
+    "SeedBankProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "SelectionMethod",
+        "offset": 28
+      },
+      {
+        "name": "AlwaysUseChooser",
+        "offset": 32
+      },
+      {
+        "name": "ZombieMode",
+        "offset": 33
+      },
+      {
+        "name": "GridItemMode",
+        "offset": 34
+      },
+      {
+        "name": "PlantWhiteList",
+        "offset": 48
+      },
+      {
+        "name": "PlantBlackList",
+        "offset": 60
+      },
+      {
+        "name": "BlackListLiftedBy",
+        "offset": 72
+      },
+      {
+        "name": "PresetPlantList",
+        "offset": 36
+      }
+    ]
+  },
+  "seedbank_reflection_scope": "Real manager/schema callbacks, all nine selected original constructors, both original load passes and property/ref dispatch execute; compare class order/all ancestry pairs, whole intern state, both game-store slot/index trees, live/dead object tokens, all initialized reflected fields and resolved references. String vectors compare logical contents, not allocator capacity/COW identity. Original padding, vtable ABI and physical global metadata/schema symbol table excluded. GameObject Serialize executes its real post-read event path against an empty bus seeded from _INIT_134; no game subscribers. The host data adapter does not implement the event bus, callbacks or game behavior, and event-bus state is excluded. ASCII alias/narrow string list, no explicit UID/text RTID; float decimal C-library boundary controlled, wide/special text excluded. Real resource1 loads 3/5 objects because two game classes remain unsupported; this is not a whole-level/gameplay run. RailcartType narrow/C-string text plus nested Rails/Railcarts int records; resize preserves existing fields, new entries initialize to -1, nonobjects preserve resized entries. Vector capacities excluded. Selected nonarray-vector following-field scope fallbacks compared; host does not implement the whole original serializer scope stack or arbitrary malformed-context propagation. SeedBank data: narrow SelectionMethod enum (preset=0/chooser=1), three boolean read properties, three narrow-string plant lists and BlackListLiftedBy; fields follow actual registration order. Non-reference bool coercion only; numeric/wide enum and arbitrary string conversions remain excluded.",
+  "seedbank_selection_enum": {
+    "flags": 2147483648,
+    "entries": [
+      [
+        "chooser",
+        1
+      ],
+      [
+        "preset",
+        0
+      ]
+    ]
+  },
+  "seedbank_native_cli_validation": {
+    "executable_sha256": "ccd26c552e03781207f763cc0080f168c060fc3caf94bed99aada6ba927b5845",
+    "profile": "--seedbank-only (round 27 nine-class profile)",
+    "original_engine_library_required": false,
+    "data_only": true,
+    "game_behavior_executed": false,
+    "examples": [
+      {
+        "example": "mixed-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round27\\seedbank_reflection\\example\\mixed-cycle.cpp.objects.json",
+        "output_sha256": "da2b24017f4a4396754988deb4efa45eec945abe830581021436aec85c19896a",
+        "stdout": "Created 2 of 2 data objects; 9 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "cowboy-dangerroom",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 3,
+        "declarations": 5,
+        "output": "native_analysis\\core_round27\\seedbank_reflection\\example\\cowboy-dangerroom.cpp.objects.json",
+        "output_sha256": "edbb821ee845163c7018fdce1a3ceaa2d90026c844fff7db39c2b179f535b397",
+        "stdout": "Created 3 of 5 data objects; 9 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_enable\\COWBOY_DANGERROOM.RTON",
+          "plaintext_sha256": "0b59e3272b33cf4006c0c308fb4fb8798f59663b815bdbc0e1c2f1df1e9d427a"
+        }
+      },
+      {
+        "example": "cyclic",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round24\\reflection_chain\\example\\cyclic.cpp.objects.json",
+        "output_sha256": "b0c58605e9eb5efa777a28da6864d256f5951ef9e89f4519313815b77c1a5247",
+        "stdout": "Created 2 of 2 data objects; 9 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "railcart-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round27\\seedbank_reflection\\example\\railcart-cycle.cpp.objects.json",
+        "output_sha256": "3af16d3cef1ea34887f887260b200dde2182dab3f21d11d89a8d919b2ace6afb",
+        "stdout": "Created 2 of 2 data objects; 9 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "seedbank-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round27\\seedbank_reflection\\example\\seedbank-cycle.cpp.objects.json",
+        "output_sha256": "49fb71b77861e296379ff9b83883ad0f47f2c6877ee7482a1d98123559c6e3e7",
+        "stdout": "Created 2 of 2 data objects; 9 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "resource-2",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 1,
+        "declarations": 6,
+        "output": "native_analysis\\core_round27\\seedbank_reflection\\example\\resource-2.cpp.objects.json",
+        "output_sha256": "176e680196ad4461feeb9843435806591149bef2a6044f36e7752d17adf34580",
+        "stdout": "Created 1 of 6 data objects; 9 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_disable\\FESTIVAL_LV3_HARD.RTON",
+          "plaintext_sha256": "f21aa1631c1f275f504f20f804b5ff1a7d810310dd2509bea0df986c8f29a7ea"
+        }
+      },
+      {
+        "example": "resource-3",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 1,
+        "declarations": 6,
+        "output": "native_analysis\\core_round27\\seedbank_reflection\\example\\resource-3.cpp.objects.json",
+        "output_sha256": "176e680196ad4461feeb9843435806591149bef2a6044f36e7752d17adf34580",
+        "stdout": "Created 1 of 6 data objects; 9 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_enable\\FESTIVAL_LV3_HARD.RTON",
+          "plaintext_sha256": "1ab6c97b8ecdc6472e029f13b6bc3d937dad2d2a8b69354c82831b4038b82c8a"
+        }
+      },
+      {
+        "example": "resource-4",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 1,
+        "declarations": 6,
+        "output": "native_analysis\\core_round27\\seedbank_reflection\\example\\resource-4.cpp.objects.json",
+        "output_sha256": "7db4f5ddb340de30e247dbf15a709679401e3cd2dd5668f85be267bfb6204d50",
+        "stdout": "Created 1 of 6 data objects; 9 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_disable\\FESTIVAL_LV3_NORMAL.RTON",
+          "plaintext_sha256": "257e99643f5aa35abcf55133a109de3eb9d87f2884549417b625894b62447f6f"
+        }
+      }
+    ],
+    "scope": "Unchanged asset plaintexts and focused schema-derived graphs. Exit 0 means all declarations have supported factories; it does not assert all external references resolve or game behavior runs. Unsupported declarations remain null and CLI returns 3 for a partial load."
+  },
+  "other_asset_data_objects_supported": [
+    {
+      "created": 2,
+      "declarations": 6,
+      "origin": {
+        "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_disable\\FESTIVAL_LV3_HARD.RTON",
+        "plaintext_sha256": "f21aa1631c1f275f504f20f804b5ff1a7d810310dd2509bea0df986c8f29a7ea"
+      },
+      "whole_level_supported": false
+    },
+    {
+      "created": 2,
+      "declarations": 6,
+      "origin": {
+        "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_enable\\FESTIVAL_LV3_HARD.RTON",
+        "plaintext_sha256": "1ab6c97b8ecdc6472e029f13b6bc3d937dad2d2a8b69354c82831b4038b82c8a"
+      },
+      "whole_level_supported": false
+    },
+    {
+      "created": 2,
+      "declarations": 6,
+      "origin": {
+        "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_disable\\FESTIVAL_LV3_NORMAL.RTON",
+        "plaintext_sha256": "257e99643f5aa35abcf55133a109de3eb9d87f2884549417b625894b62447f6f"
+      },
+      "whole_level_supported": false
+    }
+  ],
+  "wave_reflection_arm_cpp_full_state_checkpoints": 197,
+  "wave_reflection_original_operations": 119,
+  "wave_reflection_function_entry_hits": {
+    "register": 11,
+    "lookup": 140,
+    "ancestry": 28512,
+    "ground_factory": 5,
+    "game_factory": 2,
+    "sheet_factory": 2,
+    "module_factory": 2,
+    "intro_factory": 2,
+    "standard_factory": 2,
+    "danger_factory": 24,
+    "create_pass": 79,
+    "fill_pass": 100,
+    "properties": 346,
+    "custom_property": 397,
+    "float_read": 30,
+    "int_read": 276,
+    "reference_read": 95,
+    "resolve": 842,
+    "game_serialize": 137,
+    "railcart_factory": 11,
+    "rail_resize": 15,
+    "cart_resize": 15,
+    "seedbank_factory": 30,
+    "enum_read": 36,
+    "boolean_read": 48,
+    "wave_factory": 26,
+    "wave_destroy": 25,
+    "wave_record_destroy": 19
+  },
+  "wave_reflection_schemas": {
+    "RtObject": [],
+    "EntityComponent_GroundEffect": [
+      {
+        "name": "m_type",
+        "offset": 8
+      },
+      {
+        "name": "m_effect",
+        "offset": 16
+      }
+    ],
+    "GameObject": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      }
+    ],
+    "PropertySheetBase": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      }
+    ],
+    "LevelModuleProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      }
+    ],
+    "IntroModuleProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      }
+    ],
+    "StandardLevelIntroProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "PanStartOffset",
+        "offset": 28
+      },
+      {
+        "name": "PanEndOffset",
+        "offset": 32
+      },
+      {
+        "name": "PanRightDuration",
+        "offset": 36
+      },
+      {
+        "name": "PanLeftDuration",
+        "offset": 40
+      },
+      {
+        "name": "NarrationID",
+        "offset": 44
+      },
+      {
+        "name": "SubsequentPlayNarrationID",
+        "offset": 48
+      }
+    ],
+    "DangerRoomLevelIntroProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "PanStartOffset",
+        "offset": 28
+      },
+      {
+        "name": "PanEndOffset",
+        "offset": 32
+      },
+      {
+        "name": "PanRightDuration",
+        "offset": 36
+      },
+      {
+        "name": "PanLeftDuration",
+        "offset": 40
+      },
+      {
+        "name": "NarrationID",
+        "offset": 44
+      },
+      {
+        "name": "SubsequentPlayNarrationID",
+        "offset": 48
+      }
+    ],
+    "RailcartProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "RailcartType",
+        "offset": 28
+      },
+      {
+        "name": "Rails",
+        "offset": 32
+      },
+      {
+        "name": "Railcarts",
+        "offset": 44
+      }
+    ],
+    "SeedBankProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "SelectionMethod",
+        "offset": 28
+      },
+      {
+        "name": "AlwaysUseChooser",
+        "offset": 32
+      },
+      {
+        "name": "ZombieMode",
+        "offset": 33
+      },
+      {
+        "name": "GridItemMode",
+        "offset": 34
+      },
+      {
+        "name": "PlantWhiteList",
+        "offset": 48
+      },
+      {
+        "name": "PlantBlackList",
+        "offset": 60
+      },
+      {
+        "name": "BlackListLiftedBy",
+        "offset": 72
+      },
+      {
+        "name": "PresetPlantList",
+        "offset": 36
+      }
+    ],
+    "WaveGeneratorProperties": [
+      {
+        "name": "m_thisPtr",
+        "offset": 8
+      },
+      {
+        "name": "ResourceGroupNames",
+        "offset": 16
+      },
+      {
+        "name": "HeroProps",
+        "offset": 32
+      },
+      {
+        "name": "Waves",
+        "offset": 40
+      },
+      {
+        "name": "ZombiePool",
+        "offset": 52
+      },
+      {
+        "name": "FlagWaveInterval",
+        "offset": 64
+      },
+      {
+        "name": "WaveCount",
+        "offset": 68
+      },
+      {
+        "name": "WaveSpendingPointIncrement",
+        "offset": 72
+      },
+      {
+        "name": "WaveSpendingPoints",
+        "offset": 76
+      },
+      {
+        "name": "SpawnColStart",
+        "offset": 80
+      },
+      {
+        "name": "SpawnColEnd",
+        "offset": 84
+      },
+      {
+        "name": "SpawnCount",
+        "offset": 88
+      },
+      {
+        "name": "IgnoreFlagCarriers",
+        "offset": 92
+      },
+      {
+        "name": "IsRiseFromGroundMode",
+        "offset": 93
+      }
+    ]
+  },
+  "wave_reflection_scope": "Real manager/schema callbacks, all ten selected original constructors, both original load passes and property/ref dispatch execute; compare class order/all ancestry pairs, whole intern state, both game-store slot/index trees, live/dead object tokens, all initialized reflected fields and resolved references. String vectors compare logical contents, not allocator capacity/COW identity. Original padding, vtable ABI and physical global metadata/schema symbol table excluded. GameObject Serialize executes its real post-read event path against an empty bus seeded from _INIT_134; no game subscribers. The host data adapter does not implement the event bus, callbacks or game behavior, and event-bus state is excluded. ASCII alias/narrow string list, no explicit UID/text RTID; float decimal C-library boundary controlled, wide/special text excluded. Real resource1 loads 4/5 objects because one game class remain unsupported; this is not a whole-level/gameplay run. RailcartType narrow/C-string text plus nested Rails/Railcarts int records; resize preserves existing fields, new entries initialize to -1, nonobjects preserve resized entries. Vector capacities excluded. Selected nonarray-vector following-field scope fallbacks compared; host does not implement the whole original serializer scope stack or arbitrary malformed-context propagation. SeedBank data: narrow SelectionMethod enum (preset=0/chooser=1), three boolean read properties, three narrow-string plant lists and BlackListLiftedBy; fields follow actual registration order. Non-reference bool coercion only; numeric/wide enum and arbitrary string conversions remain excluded. WaveGeneratorProperties: default owned HeroTypes/DefaultHeroLevelProps symbolic reference, nonempty nested waves/event/zombie/seed pool records, Row narrow enum and all registered scalar fields. Original factory leaves SpawnCount uninitialized: CPU property writes track definedness; compare its value only once written. Nested vector inputs require arrays; arbitrary malformed nested-context propagation excluded. Private non-reflected record words/padding excluded; pool ownership and original forward element/reverse field teardown order are compared.",
+  "wave_nested_schemas": {
+    "Wave": [
+      {
+        "name": "DisableRandomSpawns",
+        "offset": 0
+      },
+      {
+        "name": "WaitUntilAllZombiesDie",
+        "offset": 1
+      },
+      {
+        "name": "ColNumPlantIsDragged",
+        "offset": 4
+      },
+      {
+        "name": "SpawnColStart",
+        "offset": 8
+      },
+      {
+        "name": "SpawnColEnd",
+        "offset": 12
+      },
+      {
+        "name": "SpawnPlantFoodCount",
+        "offset": 16
+      },
+      {
+        "name": "WavePointStart",
+        "offset": 20
+      },
+      {
+        "name": "WavePointIncrement",
+        "offset": 24
+      },
+      {
+        "name": "WavePointOverride",
+        "offset": 28
+      },
+      {
+        "name": "Event",
+        "offset": 36
+      },
+      {
+        "name": "WaveSpawnTime",
+        "offset": 32
+      },
+      {
+        "name": "Zombies",
+        "offset": 52
+      },
+      {
+        "name": "AddToZombiePool",
+        "offset": 64
+      },
+      {
+        "name": "RemoveFromZombiePool",
+        "offset": 76
+      },
+      {
+        "name": "AddToSeedPool",
+        "offset": 88
+      },
+      {
+        "name": "RemoveFromSeedPool",
+        "offset": 100
+      }
+    ],
+    "Event": [
+      {
+        "name": "Enabled",
+        "offset": 0
+      },
+      {
+        "name": "Count",
+        "offset": 4
+      },
+      {
+        "name": "TimeSpread",
+        "offset": 8
+      },
+      {
+        "name": "Waves",
+        "offset": 12
+      }
+    ],
+    "ZombieSpawn": [
+      {
+        "name": "Row",
+        "offset": 0
+      },
+      {
+        "name": "HasPlantFood",
+        "offset": 4
+      },
+      {
+        "name": "Loot",
+        "offset": 8
+      },
+      {
+        "name": "Level",
+        "offset": 12
+      },
+      {
+        "name": "Type",
+        "offset": 16
+      },
+      {
+        "name": "Rise_GridX",
+        "offset": 24
+      },
+      {
+        "name": "Rise_GridY",
+        "offset": 28
+      },
+      {
+        "name": "SunDrop",
+        "offset": 32
+      },
+      {
+        "name": "BesiegeHit",
+        "offset": 36
+      },
+      {
+        "name": "ZombieRate",
+        "offset": 40
+      },
+      {
+        "name": "ZombieScale",
+        "offset": 44
+      },
+      {
+        "name": "TargetValidTime",
+        "offset": 48
+      }
+    ],
+    "ZombiePool": [
+      {
+        "name": "Cost",
+        "offset": 0
+      },
+      {
+        "name": "Weight",
+        "offset": 4
+      },
+      {
+        "name": "Overridden",
+        "offset": 8
+      },
+      {
+        "name": "Type",
+        "offset": 16
+      }
+    ],
+    "SeedPool": [
+      {
+        "name": "Weight",
+        "offset": 0
+      },
+      {
+        "name": "MaxCount",
+        "offset": 4
+      },
+      {
+        "name": "MaxCountIncludesPlanted",
+        "offset": 8
+      },
+      {
+        "name": "Type",
+        "offset": 24
+      }
+    ]
+  },
+  "wave_row_enum": {
+    "flags": 2147483648,
+    "entries": [
+      [
+        "1",
+        0
+      ],
+      [
+        "2",
+        1
+      ],
+      [
+        "3",
+        2
+      ],
+      [
+        "4",
+        3
+      ],
+      [
+        "5",
+        4
+      ],
+      [
+        "6",
+        5
+      ],
+      [
+        "?",
+        6
+      ],
+      [
+        "prev",
+        7
+      ]
+    ]
+  },
+  "wave_spawn_count_initialization_proof": {
+    "original_sha256": "0892806592b0a6a1503d246020a9c69a634c85aa65d9baf2955106ad432420df",
+    "cases": [
+      {
+        "allocator_fill_byte": 165,
+        "registered_offset": 88,
+        "word_after_constructor": 2779096485,
+        "cpu_writes": []
+      },
+      {
+        "allocator_fill_byte": 90,
+        "registered_offset": 88,
+        "word_after_constructor": 1515870810,
+        "cpu_writes": []
+      }
+    ],
+    "spawn_count_initialized_by_factory": false,
+    "scope": "Actual original 009c4c70 factory and 009c7a18 deletion execute. Two allocator fill patterns survive at registered +0x58 with zero CPU writes; neither pattern is a game default. Host represents this as undefined until a property write. Diagnostic evidence only, not added to C++ assertion count."
+  },
+  "wave_native_cli_validation": {
+    "executable_sha256": "ccd26c552e03781207f763cc0080f168c060fc3caf94bed99aada6ba927b5845",
+    "profile": "--wave-only (round 28 ten-class profile)",
+    "original_engine_library_required": false,
+    "data_only": true,
+    "game_behavior_executed": false,
+    "examples": [
+      {
+        "example": "mixed-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round28\\wave_reflection\\example\\mixed-cycle.cpp.objects.json",
+        "output_sha256": "da2b24017f4a4396754988deb4efa45eec945abe830581021436aec85c19896a",
+        "stdout": "Created 2 of 2 data objects; 10 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "cowboy-dangerroom",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 4,
+        "declarations": 5,
+        "output": "native_analysis\\core_round28\\wave_reflection\\example\\cowboy-dangerroom.cpp.objects.json",
+        "output_sha256": "4a9379d836f9beef32db22dd299892696d7c45ca543285dc13118508893bcecc",
+        "stdout": "Created 4 of 5 data objects; 10 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_enable\\COWBOY_DANGERROOM.RTON",
+          "plaintext_sha256": "0b59e3272b33cf4006c0c308fb4fb8798f59663b815bdbc0e1c2f1df1e9d427a"
+        }
+      },
+      {
+        "example": "cyclic",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round24\\reflection_chain\\example\\cyclic.cpp.objects.json",
+        "output_sha256": "b0c58605e9eb5efa777a28da6864d256f5951ef9e89f4519313815b77c1a5247",
+        "stdout": "Created 2 of 2 data objects; 10 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "railcart-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round28\\wave_reflection\\example\\railcart-cycle.cpp.objects.json",
+        "output_sha256": "3af16d3cef1ea34887f887260b200dde2182dab3f21d11d89a8d919b2ace6afb",
+        "stdout": "Created 2 of 2 data objects; 10 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "seedbank-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round28\\wave_reflection\\example\\seedbank-cycle.cpp.objects.json",
+        "output_sha256": "49fb71b77861e296379ff9b83883ad0f47f2c6877ee7482a1d98123559c6e3e7",
+        "stdout": "Created 2 of 2 data objects; 10 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "resource-2",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 1,
+        "declarations": 6,
+        "output": "native_analysis\\core_round28\\wave_reflection\\example\\resource-2.cpp.objects.json",
+        "output_sha256": "176e680196ad4461feeb9843435806591149bef2a6044f36e7752d17adf34580",
+        "stdout": "Created 1 of 6 data objects; 10 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_disable\\FESTIVAL_LV3_HARD.RTON",
+          "plaintext_sha256": "f21aa1631c1f275f504f20f804b5ff1a7d810310dd2509bea0df986c8f29a7ea"
+        }
+      },
+      {
+        "example": "resource-3",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 1,
+        "declarations": 6,
+        "output": "native_analysis\\core_round28\\wave_reflection\\example\\resource-3.cpp.objects.json",
+        "output_sha256": "176e680196ad4461feeb9843435806591149bef2a6044f36e7752d17adf34580",
+        "stdout": "Created 1 of 6 data objects; 10 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_enable\\FESTIVAL_LV3_HARD.RTON",
+          "plaintext_sha256": "1ab6c97b8ecdc6472e029f13b6bc3d937dad2d2a8b69354c82831b4038b82c8a"
+        }
+      },
+      {
+        "example": "resource-4",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 1,
+        "declarations": 6,
+        "output": "native_analysis\\core_round28\\wave_reflection\\example\\resource-4.cpp.objects.json",
+        "output_sha256": "7db4f5ddb340de30e247dbf15a709679401e3cd2dd5668f85be267bfb6204d50",
+        "stdout": "Created 1 of 6 data objects; 10 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_disable\\FESTIVAL_LV3_NORMAL.RTON",
+          "plaintext_sha256": "257e99643f5aa35abcf55133a109de3eb9d87f2884549417b625894b62447f6f"
+        }
+      },
+      {
+        "example": "wave-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round28\\wave_reflection\\example\\wave-cycle.cpp.objects.json",
+        "output_sha256": "ebc7a2506bf10a67ceaa1b12e579498bd26d0b1019c9cc207826001dec39027b",
+        "stdout": "Created 2 of 2 data objects; 10 supported concrete data classes",
+        "stderr": ""
+      }
+    ],
+    "scope": "Unchanged asset plaintexts and focused schema-derived graphs. Exit 0 means all declarations have supported factories; it does not assert all external references resolve or game behavior runs. Unsupported declarations remain null and CLI returns 3 for a partial load."
+  },
+  "level_reflection_arm_cpp_full_state_checkpoints": 282,
+  "level_reflection_original_operations": 164,
+  "level_reflection_function_entry_hits": {
+    "register": 12,
+    "lookup": 202,
+    "ancestry": 47827,
+    "ground_factory": 5,
+    "game_factory": 2,
+    "sheet_factory": 2,
+    "module_factory": 2,
+    "intro_factory": 2,
+    "standard_factory": 2,
+    "danger_factory": 28,
+    "create_pass": 119,
+    "fill_pass": 143,
+    "properties": 434,
+    "custom_property": 703,
+    "float_read": 30,
+    "int_read": 369,
+    "reference_read": 243,
+    "resolve": 1807,
+    "game_serialize": 199,
+    "railcart_factory": 12,
+    "rail_resize": 16,
+    "cart_resize": 16,
+    "seedbank_factory": 34,
+    "enum_read": 84,
+    "boolean_read": 74,
+    "wave_factory": 27,
+    "wave_destroy": 26,
+    "wave_record_destroy": 19,
+    "level_factory": 46,
+    "level_destroy": 45,
+    "feature_declined_read": 6
+  },
+  "level_reflection_scope": "Real manager/schema callbacks, all eleven selected original constructors, both original load passes and property/ref dispatch execute; compare class order/all ancestry pairs, whole intern state, both game-store slot/index trees, live/dead object tokens, all initialized reflected fields and resolved references. String vectors compare logical contents, not allocator capacity/COW identity. Original padding, vtable ABI and physical global metadata/schema symbol table excluded. GameObject Serialize executes its real post-read event path against an empty bus seeded from _INIT_134; no game subscribers. The host data adapter does not implement the event bus, callbacks or game behavior, and event-bus state is excluded. ASCII alias/narrow string list, no explicit UID/text RTID; float decimal C-library boundary controlled, wide/special text excluded. Real resource1 loads 5/5 objects with all five declarations supported in this selected profile; this is not a whole-level/gameplay run. RailcartType narrow/C-string text plus nested Rails/Railcarts int records; resize preserves existing fields, new entries initialize to -1, nonobjects preserve resized entries. Vector capacities excluded. Selected nonarray-vector following-field scope fallbacks compared; host does not implement the whole original serializer scope stack or arbitrary malformed-context propagation. SeedBank data: narrow SelectionMethod enum (preset=0/chooser=1), three boolean read properties, three narrow-string plant lists and BlackListLiftedBy; fields follow actual registration order. Non-reference bool coercion only; numeric/wide enum and arbitrary string conversions remain excluded. WaveGeneratorProperties: default owned HeroTypes/DefaultHeroLevelProps symbolic reference, nonempty nested waves/event/zombie/seed pool records, Row narrow enum and all registered scalar fields. Original factory leaves SpawnCount uninitialized: CPU property writes track definedness; compare its value only once written. Nested vector inputs require arrays; arbitrary malformed nested-context propagation excluded. Private non-reflected record words/padding excluded; pool ownership and original forward element/reverse field teardown order are compared. LevelDefinition inherits PropertySheetBase, not LevelModuleProperties; 37 registered fields including owned module/warning refs, narrow texts/reward enum, signed short bit truncation and flags. CurrentLevel is the primary package alias for this profile, enabling four local module links. GameFeature remains an unresolved read-declining placeholder in original selected registration: compare resize/default slots only, no unlock-value semantics. External game modules/types and gameplay remain incomplete; 5/5 is declaration construction only.",
+  "level_reward_enum": {
+    "flags": 2147483648,
+    "entries": [
+      [
+        "bonus",
+        6
+      ],
+      [
+        "collectable",
+        2
+      ],
+      [
+        "firstkey",
+        9
+      ],
+      [
+        "mapgadget",
+        7
+      ],
+      [
+        "none",
+        0
+      ],
+      [
+        "note",
+        10
+      ],
+      [
+        "piece_firegourd",
+        13
+      ],
+      [
+        "piece_gravebuster",
+        14
+      ],
+      [
+        "powerup",
+        4
+      ],
+      [
+        "powerupgadget",
+        8
+      ],
+      [
+        "present",
+        1
+      ],
+      [
+        "seed_packet",
+        3
+      ],
+      [
+        "starkey",
+        12
+      ],
+      [
+        "upgrade",
+        5
+      ],
+      [
+        "worldtrophy",
+        11
+      ]
+    ]
+  },
+  "level_warning_schema": [
+    {
+      "name": "Type",
+      "offset": 0
+    },
+    {
+      "name": "Text",
+      "offset": 8
+    },
+    {
+      "name": "Level",
+      "offset": 12
+    }
+  ],
+  "level_feature_codec": {
+    "type_name": "GameFeature",
+    "read_address": "011ab2bc",
+    "read_result": 0,
+    "output_word": 305419896
+  },
+  "level_native_cli_validation": {
+    "executable_sha256": "ccd26c552e03781207f763cc0080f168c060fc3caf94bed99aada6ba927b5845",
+    "profile": "default (round 29 eleven-class CurrentLevel profile)",
+    "original_engine_library_required": false,
+    "data_only": true,
+    "game_behavior_executed": false,
+    "examples": [
+      {
+        "example": "mixed-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round29\\level_reflection\\example\\mixed-cycle.cpp.objects.json",
+        "output_sha256": "da2b24017f4a4396754988deb4efa45eec945abe830581021436aec85c19896a",
+        "stdout": "Created 2 of 2 data objects; 11 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "cowboy-dangerroom",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 5,
+        "declarations": 5,
+        "output": "native_analysis\\core_round29\\level_reflection\\example\\cowboy-dangerroom.cpp.objects.json",
+        "output_sha256": "b9a877ef8807b8c6c606e9ef1f933079f67adb745d2b1bb2e83d551cec9d0c1f",
+        "stdout": "Created 5 of 5 data objects; 11 supported concrete data classes",
+        "stderr": "",
+        "local_module_targets": [
+          2,
+          1,
+          3,
+          4
+        ],
+        "unresolved_symbolic_references": 16,
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_enable\\COWBOY_DANGERROOM.RTON",
+          "plaintext_sha256": "0b59e3272b33cf4006c0c308fb4fb8798f59663b815bdbc0e1c2f1df1e9d427a"
+        }
+      },
+      {
+        "example": "cyclic",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round24\\reflection_chain\\example\\cyclic.cpp.objects.json",
+        "output_sha256": "b0c58605e9eb5efa777a28da6864d256f5951ef9e89f4519313815b77c1a5247",
+        "stdout": "Created 2 of 2 data objects; 11 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "railcart-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round29\\level_reflection\\example\\railcart-cycle.cpp.objects.json",
+        "output_sha256": "3af16d3cef1ea34887f887260b200dde2182dab3f21d11d89a8d919b2ace6afb",
+        "stdout": "Created 2 of 2 data objects; 11 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "seedbank-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round29\\level_reflection\\example\\seedbank-cycle.cpp.objects.json",
+        "output_sha256": "49fb71b77861e296379ff9b83883ad0f47f2c6877ee7482a1d98123559c6e3e7",
+        "stdout": "Created 2 of 2 data objects; 11 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "resource-2",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 6,
+        "output": "native_analysis\\core_round29\\level_reflection\\example\\resource-2.cpp.objects.json",
+        "output_sha256": "cfcf98ee37ac486a3de6d4d60862260f0f1b32d4e9aafb6d133598b4de84bbfd",
+        "stdout": "Created 2 of 6 data objects; 11 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_disable\\FESTIVAL_LV3_HARD.RTON",
+          "plaintext_sha256": "f21aa1631c1f275f504f20f804b5ff1a7d810310dd2509bea0df986c8f29a7ea"
+        }
+      },
+      {
+        "example": "resource-3",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 6,
+        "output": "native_analysis\\core_round29\\level_reflection\\example\\resource-3.cpp.objects.json",
+        "output_sha256": "461d7f75ac00882b55cdb7b32403d2bb647f4baf716155fb31bd8d066d57474b",
+        "stdout": "Created 2 of 6 data objects; 11 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_enable\\FESTIVAL_LV3_HARD.RTON",
+          "plaintext_sha256": "1ab6c97b8ecdc6472e029f13b6bc3d937dad2d2a8b69354c82831b4038b82c8a"
+        }
+      },
+      {
+        "example": "resource-4",
+        "exit_code": 3,
+        "expected_exit_code": 3,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 6,
+        "output": "native_analysis\\core_round29\\level_reflection\\example\\resource-4.cpp.objects.json",
+        "output_sha256": "a21ab30b1ec1457e94e53c1acfcb31a5d4000f75f8f5d518330b1c0fc58dd58f",
+        "stdout": "Created 2 of 6 data objects; 11 supported concrete data classes",
+        "stderr": "Some declarations have unsupported/abstract factories",
+        "source": {
+          "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_disable\\FESTIVAL_LV3_NORMAL.RTON",
+          "plaintext_sha256": "257e99643f5aa35abcf55133a109de3eb9d87f2884549417b625894b62447f6f"
+        }
+      },
+      {
+        "example": "wave-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round29\\level_reflection\\example\\wave-cycle.cpp.objects.json",
+        "output_sha256": "2b99d64b8f24479d954ce46754de0f06609f090d9b3933816531057a7c5e5269",
+        "stdout": "Created 2 of 2 data objects; 11 supported concrete data classes",
+        "stderr": ""
+      },
+      {
+        "example": "level-cycle",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "exact_arm_graph_match": true,
+        "created": 2,
+        "declarations": 2,
+        "output": "native_analysis\\core_round29\\level_reflection\\example\\level-cycle.cpp.objects.json",
+        "output_sha256": "039a8fb3fd991665467ee39df8292d54569b827e1f3caf65e0da1614db170c2b",
+        "stdout": "Created 2 of 2 data objects; 11 supported concrete data classes",
+        "stderr": ""
+      }
+    ],
+    "scope": "Unchanged asset plaintexts and focused schema-derived graphs. Exit 0 means all declarations have supported factories; it does not assert all external references resolve or game behavior runs. Unsupported declarations remain null and CLI returns 3 for a partial load."
+  },
+  "default_test_program_count": 26,
+  "sundropper_arm_field_checkpoints": 25,
+  "sundropper_actual_package_integration": {
+    "passed": true,
+    "before_module_links": 4,
+    "after_module_links": 5,
+    "external_created": 3,
+    "external_declarations": 66,
+    "full_original_arm_graph_comparison": false
+  },
+  "sundropper_supported_data_class": "SunDropperProperties",
+  "win_condition_original_arm_cases": 15,
+  "win_condition_integrated_with_full_board": false,
+  "win_properties_class": "ZombiesDeadWinConProperties",
+  "win_properties_real_package_integration": {
+    "passed": true,
+    "module_links_before": 4,
+    "module_links_after": 6,
+    "external_created": 4,
+    "external_declarations": 66,
+    "runtime_module_instantiated": false
+  },
+  "danger_module_arm_states": 8,
+  "danger_module_arm_field_identity_checkpoints": 77,
+  "danger_module_host_teardown_checks": 3,
+  "danger_module_class": "DangerRoomModuleProperties",
+  "danger_module_package_integration": {
+    "passed": true,
+    "module_links_before": 4,
+    "module_links_after": 7,
+    "external_created": 5,
+    "external_declarations": 66,
+    "full_two_package_original_arm_comparison": false
+  },
+  "brain_field_arm_checkpoints": 8,
+  "brain_class": "ZombiesAteYourBrainsProperties",
+  "brain_package_integration": {
+    "passed": true,
+    "module_links_before": 4,
+    "module_links_after": 8,
+    "external_created": 6,
+    "external_declarations": 66,
+    "full_original_arm_graph_comparison": false
+  }
+}

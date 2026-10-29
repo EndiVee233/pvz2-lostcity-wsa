@@ -12,3 +12,9 @@ work/
 # Python
 __pycache__/
 *.pyc
+# Generated diagnostic inputs can embed original game resource payloads.
+native_recovered/tests/*_fixtures.inc
+*.exe
+*.lib
+*.pdb
+*.tar

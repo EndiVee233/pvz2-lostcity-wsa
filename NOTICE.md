@@ -13,6 +13,12 @@ repair, and research. Their presence does not transfer or waive any rights held
 by Electronic Arts / PopCap Games. No original APK, game assets, or native game
 libraries are included in this repository.
 
+The `native_recovered/` tree contains partial native semantic reconstructions
+and explicit host adapters, with the limitations documented by each recovery
+report. This is not the original complete game source. Generated diagnostic
+fixture arrays, which may contain original resource payloads, are excluded;
+the source-only static-library build remains available without those fixtures.
+
 - Plants vs. Zombies 2 and all related assets: © PopCap Games / Electronic Arts.
 - Pvz2Tool launcher: © DreamMoonCai, see https://github.com/DreamMoonCai/Pvz2Tool
 - astc-codec: © Google LLC, Apache License 2.0,

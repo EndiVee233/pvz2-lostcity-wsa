@@ -1,0 +1,13 @@
+{
+  "source_only_checkout_library_build_passed": true,
+  "command": "native_recovered/build.ps1 -LibraryOnly",
+  "compiler": "Zig 0.13.0",
+  "target": "Windows x86_64",
+  "original_game_library_required": false,
+  "generated_diagnostic_fixtures_required": false,
+  "generated_diagnostic_fixtures_in_checkout": 0,
+  "artifact_bytes": 12798682,
+  "artifact_sha256": "130ccb0f3558737cf0e5fbd703f4242fc748008969bba83c452027c14d289023",
+  "full_game_source_build": false,
+  "cmake_tested": false
+}

@@ -1,5 +1,19 @@
 # 植物大战僵尸2 1.7.5 
 
+## 源码恢复进度：第三十三轮
+
+新增 [`native_recovered/`](native_recovered/README.md)：20 个 C++ 源码单元覆盖对象句柄、注册表、字符串驻留、RTON 数据读取、反射及部分关卡配置。可选十五种具体数据类，本地记录为 45,591 项默认检查点；真实 Cowboy 跨包模块连接 8 条，LevelModules 支持 6/66 个声明。最新范围见[第三十三轮报告](docs/recovery/第三十三轮失败边界配置恢复与同步结果.md)和[整体进度](docs/recovery/完全从源码编译进度.md)。这些数量不代表游戏恢复百分比。
+
+公开检出可独立编译恢复出的静态库（本项目使用便携 Zig 0.13.0）：
+
+```powershell
+.\native_recovered\build.ps1 -LibraryOnly -Zig C:\tools\zig\zig.exe
+```
+
+完整检查程序源码及取证/导出脚本也已同步。大型生成诊断输入可能嵌有游戏资源，因此未随仓库分发；运行完整检查需在持有原始输入的本地分析工作区生成 `tests/*_fixtures.inc`。普通静态库构建不需要这些输入或原游戏库。CMake 可用 `-DPVZ2_BUILD_DIAGNOSTICS=OFF` 只构建库，此路径尚未实测。
+
+完整 Android 引擎、场景更新、渲染音频及游戏入口尚未恢复；当前 APK 仍依赖原引擎。下方下载安装与 WSA 说明属于此前的修补版，不是纯源码引擎运行证明。源文件与发布排除范围见[快照清单](docs/recovery/source-snapshot.json)。
+
 > **基于《植物大战僵尸2》中文版 1.7.5（失落之城，包名 `com.popcap.pvz2cthd`）制作。**
 > 启动器/资源方案来自 [DreamMoonCai/Pvz2Tool](https://github.com/DreamMoonCai/Pvz2Tool)；
 > ASTC 解码基于 [google/astc-codec](https://github.com/google/astc-codec)。

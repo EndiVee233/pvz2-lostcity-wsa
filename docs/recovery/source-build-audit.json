@@ -1,0 +1,192 @@
+{
+  "apk": "rebuild_project\\output\\PvZ2-LostCity-1.7.5-rebuilt.apk",
+  "apk_bytes": 1405414714,
+  "read_only": true,
+  "dex": [
+    {
+      "path": "classes.dex",
+      "classes": 1990
+    },
+    {
+      "path": "classes2.dex",
+      "classes": 2
+    },
+    {
+      "path": "classes3.dex",
+      "classes": 16698
+    },
+    {
+      "path": "classes4.dex",
+      "classes": 7999
+    },
+    {
+      "path": "classes5.dex",
+      "classes": 7774
+    },
+    {
+      "path": "classes6.dex",
+      "classes": 9246
+    },
+    {
+      "path": "classes7.dex",
+      "classes": 6739
+    },
+    {
+      "path": "classes8.dex",
+      "classes": 9
+    }
+  ],
+  "total_apk_classes": 50457,
+  "source_java_files": {
+    "bootstrap": 1,
+    "game_bridge": 84
+  },
+  "compiled_source_class_files": {
+    "bootstrap": 9,
+    "bridge": 160
+  },
+  "compiled_source_classes": 169,
+  "source_class_inventory_percent": 0.3349,
+  "source_class_percent_scope": "Class-count inventory only; not functional coverage or whole-game source completion. Third-party classes can be rebuilt/replaced rather than hand-restored.",
+  "popcap_namespace_from_validated_build": {
+    "total": 170,
+    "source": 169
+  },
+  "native_method_declarations": 32,
+  "loaders": [
+    {
+      "path": "rebuild_project\\src\\game_bridge\\com\\popcap\\SexyAppFramework\\SexyAppFrameworkActivity.java",
+      "line": 193,
+      "text": "System.load(downloadSOPath);"
+    },
+    {
+      "path": "rebuild_project\\src\\game_bridge\\com\\popcap\\SexyAppFramework\\SexyAppFrameworkActivity.java",
+      "line": 195,
+      "text": "System.loadLibrary(\"Src\");"
+    },
+    {
+      "path": "rebuild_project\\src\\game_bridge\\com\\popcap\\SexyAppFramework\\SexyAppFrameworkActivity.java",
+      "line": 196,
+      "text": "System.loadLibrary(\"czProject\");"
+    },
+    {
+      "path": "rebuild_project\\src\\game_bridge\\com\\popcap\\SexyAppFramework\\SexyAppFrameworkActivity.java",
+      "line": 197,
+      "text": "System.loadLibrary(\"HookPVZ2\");"
+    },
+    {
+      "path": "rebuild_project\\src\\game_bridge\\com\\popcap\\SexyAppFramework\\SexyAppFrameworkActivity.java",
+      "line": 198,
+      "text": "System.loadLibrary(\"Restart\");"
+    }
+  ],
+  "native_libraries": [
+    {
+      "path": "lib/armeabi/libandroidx.graphics.path.so",
+      "bytes": 7252,
+      "sha256": "41399eba6fc2a60f6f14642375c1824f3cf25eb8fec7397d753730a3ceda3e2b",
+      "matches_original": true
+    },
+    {
+      "path": "lib/armeabi/libczProject.so",
+      "bytes": 194804,
+      "sha256": "eb62a1a9828498b2ed028233d5efc3eb8e5cf2d4274b6e5da31dc92a73330dfd",
+      "matches_original": true
+    },
+    {
+      "path": "lib/armeabi/libegamepay_dr2.so",
+      "bytes": 284040,
+      "sha256": "6776ad64d2c64f837de5fa318fbf13101f1bc161f6dd57ff5650d20ea5d905c5",
+      "matches_original": true
+    },
+    {
+      "path": "lib/armeabi/libHookPVZ2.so",
+      "bytes": 157940,
+      "sha256": "ffd2fd05606d79afa4585d65423ead1432dfbbca1db28a67e75b83afdee32678",
+      "matches_original": true
+    },
+    {
+      "path": "lib/armeabi/libplugin_phone.so",
+      "bytes": 50400,
+      "sha256": "45d4a091708fd8ab412da67a3ae9f147231b15f8564dd8e520f9b6e6552aee15",
+      "matches_original": true
+    },
+    {
+      "path": "lib/armeabi/libRestart.so",
+      "bytes": 2947132,
+      "sha256": "2e41c5f6839021601543c6a0061332bf0897589c6cb3ac1392d655bea6293bbb",
+      "matches_original": true
+    },
+    {
+      "path": "lib/armeabi/libSrc.so",
+      "bytes": 25359624,
+      "sha256": "0892806592b0a6a1503d246020a9c69a634c85aa65d9baf2955106ad432420df",
+      "matches_original": true
+    },
+    {
+      "path": "lib/armeabi/libypiap.so",
+      "bytes": 33980,
+      "sha256": "ac9e522b139e4e9888d866a05bf1d9b58036d42dafe654f885f012d8445c2002",
+      "matches_original": true
+    }
+  ],
+  "original_native_libraries_retained": 8,
+  "original_libraries_replaced_by_recovered_build": 0,
+  "native_cpp_translation_units": 20,
+  "native_jni_entry_definitions": [],
+  "native_host_build": {
+    "target": "Windows x86_64",
+    "checks": 45591,
+    "test_programs": 30,
+    "utilities": 3
+  },
+  "native_android_source_library_built": false,
+  "recovered_native_modules_packaged_into_apk": false,
+  "source_only_engine_boot_verified": false,
+  "source_only_level_run_verified": false,
+  "resource_table_compiled_from_xml": false,
+  "binary_resource_table_matches_original": true,
+  "decompiler_material": {
+    "targets": 39842,
+    "pseudocode_exports": 39819,
+    "not_compilable_source": true
+  },
+  "overall_completion_percent": null,
+  "overall_percent_reason": "No validated function-weighted inventory of gameplay/renderer/audio/resource/RTTI systems; semantic operation counts and assertion counts cannot be divided by decompiler targets to infer completion.",
+  "milestones": {
+    "host_native_modules_build": true,
+    "plaintext_rton_navigation": true,
+    "android_engine_abi": false,
+    "original_libSrc_replaced": false,
+    "gameplay_renderer_audio_from_source": false,
+    "complete_source_apk": false,
+    "bounded_factory_property_reference_chain": true
+  },
+  "bounded_reflection_data_classes": [
+    "EntityComponent_GroundEffect",
+    "GameObject",
+    "PropertySheetBase",
+    "LevelModuleProperties",
+    "IntroModuleProperties",
+    "StandardLevelIntroProperties",
+    "DangerRoomLevelIntroProperties",
+    "RailcartProperties",
+    "SeedBankProperties",
+    "WaveGeneratorProperties",
+    "LevelDefinition"
+  ],
+  "bounded_object_scope": "Selected data-schema factory/properties/references only; no game methods or full-level object coverage",
+  "bounded_resource_data_coverage": {
+    "created": 5,
+    "declarations": 5,
+    "remaining_classes": [],
+    "origin": {
+      "path": "apktool_out\\assets\\pvz2tool\\features\\level_replace_enable\\COWBOY_DANGERROOM.RTON",
+      "plaintext_sha256": "0b59e3272b33cf4006c0c308fb4fb8798f59663b815bdbc0e1c2f1df1e9d427a"
+    },
+    "all_declarations_constructed": true,
+    "local_module_links": 4,
+    "unresolved_symbolic_references": 16,
+    "whole_level_supported": false
+  }
+}
