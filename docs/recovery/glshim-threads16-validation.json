@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-30",
+  "abi": "armeabi-v7a",
+  "wsa_online_cpus": 20,
+  "max_astc_threads": 16,
+  "decoder_runtime_verified": true,
+  "apk_installation_verified": false,
+  "game_runtime_verified": false,
+  "installation_limit": "Both non-streaming and streaming install attempts lost the WSA debugging connection before success.",
+  "pixel_comparison_scenarios": [
+    {
+      "block": 4,
+      "width": 1031,
+      "height": 1027,
+      "cpus": 20,
+      "strips": 16,
+      "created": 16,
+      "failure": 0,
+      "ms": 114
+    },
+    {
+      "block": 4,
+      "width": 257,
+      "height": 259,
+      "cpus": 1,
+      "strips": 2,
+      "created": 0,
+      "failure": 0,
+      "ms": 69
+    },
+    {
+      "block": 4,
+      "width": 1031,
+      "height": 1027,
+      "cpus": 20,
+      "strips": 16,
+      "created": 8,
+      "failure": 1,
+      "ms": 190
+    },
+    {
+      "block": 4,
+      "width": 1031,
+      "height": 1027,
+      "cpus": 20,
+      "strips": 16,
+      "created": 0,
+      "failure": 2,
+      "ms": 1098
+    },
+    {
+      "block": 5,
+      "width": 1031,
+      "height": 1027,
+      "cpus": 20,
+      "strips": 16,
+      "created": 16,
+      "failure": 0,
+      "ms": 92
+    },
+    {
+      "block": 5,
+      "width": 257,
+      "height": 259,
+      "cpus": 1,
+      "strips": 2,
+      "created": 0,
+      "failure": 0,
+      "ms": 57
+    },
+    {
+      "block": 5,
+      "width": 1031,
+      "height": 1027,
+      "cpus": 20,
+      "strips": 16,
+      "created": 8,
+      "failure": 1,
+      "ms": 141
+    },
+    {
+      "block": 5,
+      "width": 1031,
+      "height": 1027,
+      "cpus": 20,
+      "strips": 16,
+      "created": 0,
+      "failure": 2,
+      "ms": 916
+    },
+    {
+      "block": 6,
+      "width": 1031,
+      "height": 1027,
+      "cpus": 20,
+      "strips": 16,
+      "created": 16,
+      "failure": 0,
+      "ms": 71
+    },
+    {
+      "block": 6,
+      "width": 257,
+      "height": 259,
+      "cpus": 1,
+      "strips": 2,
+      "created": 0,
+      "failure": 0,
+      "ms": 42
+    },
+    {
+      "block": 6,
+      "width": 1031,
+      "height": 1027,
+      "cpus": 20,
+      "strips": 16,
+      "created": 8,
+      "failure": 1,
+      "ms": 113
+    },
+    {
+      "block": 6,
+      "width": 1031,
+      "height": 1027,
+      "cpus": 20,
+      "strips": 16,
+      "created": 0,
+      "failure": 2,
+      "ms": 668
+    },
+    {
+      "block": 6,
+      "width": 4096,
+      "height": 4096,
+      "cpus": 4,
+      "strips": 17,
+      "created": 4,
+      "failure": 0,
+      "ms": 2879
+    },
+    {
+      "block": 6,
+      "width": 4096,
+      "height": 4096,
+      "cpus": 20,
+      "strips": 17,
+      "created": 16,
+      "failure": 0,
+      "ms": 1174
+    }
+  ],
+  "worker_selection_checks": 6,
+  "required_exports": [
+    "glTexImage2D",
+    "glTexSubImage2D",
+    "glCompressedTexImage2D"
+  ],
+  "dt_needed": [
+    "liblog.so",
+    "libandroid.so",
+    "libdl.so",
+    "libm.so",
+    "libc.so"
+  ],
+  "library_sha256": "7d5d1e7f48d773f9ae10b18f168c949915b0b7ec5678c75d9ddfc71f6bcf0b5c",
+  "scope": "Production ASTC strip decode against serial codec on generated test images; excludes full-game loading and GPU upload benchmarks."
+}

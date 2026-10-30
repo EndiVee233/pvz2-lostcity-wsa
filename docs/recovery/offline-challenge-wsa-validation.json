@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-30",
+  "application_id": "com.popcap.pvz2cthd.reconstruction",
+  "installed_variant": "v10-runtime-only",
+  "runtime_verified": true,
+  "full_apk_installed": false,
+  "full_apk_runtime_payload_matches_installed_variant": true,
+  "full_apk_assets_complete": true,
+  "full_apk_sha256": "5687fb38a5bcc4d793129c12b164ab3296c03e2c0039038afc9c5b503742cb81",
+  "test_apk_sha256": "2bddc0f1b7b574a1c21cdf12fe10442397f746904cbf77a19eaab83e6e97a3cc",
+  "native_sha256": {
+    "libSrc.so": "8e5d9a2afa70efb56a92012b13352770acaac56a32e56ecf7571e9096d6c73d6",
+    "libRestart.so": "7d5d1e7f48d773f9ae10b18f168c949915b0b7ec5678c75d9ddfc71f6bcf0b5c"
+  },
+  "resource_sha256": "0aae11cf23e05377026323816f6e458264bdc193b312177bca6824589fa1d29f",
+  "profile_count": 2,
+  "profile_uids_and_names_preserved": true,
+  "challenge_modes_loaded": [
+    "devil",
+    "gargantuar",
+    "yeti"
+  ],
+  "normal_difficulty_levels": [
+    "festival_lv3_easy",
+    "festival_lv1_easy",
+    "festival_lv2_easy"
+  ],
+  "daily_counts_each_mode": 1,
+  "same_day_reentry_does_not_refill": true,
+  "challenge_seed_records_preserved_across_restart": true,
+  "no_test_currency_spent": true,
+  "profile_tutorial_state_unchanged_by_submenu_patch": true,
+  "arm_cases_passed": 162,
+  "complete_victory_and_reward_collection_verified": false,
+  "hard_and_legend_difficulties_runtime_verified": false,
+  "fatal_log_lines": [],
+  "scope": "Normal challenge levels loaded offline; original victory/reward paths retained, but a full victory/reward collection was not completed."
+}

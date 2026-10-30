@@ -1,0 +1,273 @@
+{
+  "source_sha256": "0176f226b382f55b39fdff151e862c0789c6d3f33511345b6d7d9205d06557d6",
+  "patched_sha256": "fd7b6a33423cb4c18c117a2dab103f6ae56b92be711a144a6110533b92076928",
+  "ghidra_address": "0x9037c4",
+  "file_offset": "0x8f37c4",
+  "before": "304cf8eb",
+  "after": "0100a0e3",
+  "arm_cases_passed": 24,
+  "cases": [
+    {
+      "patched": false,
+      "input_speed_bits": "0x3f800000",
+      "trial": false,
+      "profile": "absent",
+      "pay_modal": false,
+      "speed_events": [
+        "0x40000000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": false,
+      "input_speed_bits": "0x3f800000",
+      "trial": false,
+      "profile": "locked",
+      "pay_modal": true,
+      "speed_events": [],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": false,
+      "input_speed_bits": "0x3f800000",
+      "trial": false,
+      "profile": "unlocked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x40000000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": false,
+      "input_speed_bits": "0x3f800000",
+      "trial": true,
+      "profile": "absent",
+      "pay_modal": false,
+      "speed_events": [
+        "0x40000000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": false,
+      "input_speed_bits": "0x3f800000",
+      "trial": true,
+      "profile": "locked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x40000000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": false,
+      "input_speed_bits": "0x3f800000",
+      "trial": true,
+      "profile": "unlocked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x40000000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": false,
+      "input_speed_bits": "0x40000000",
+      "trial": false,
+      "profile": "absent",
+      "pay_modal": false,
+      "speed_events": [
+        "0x3f800000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": false,
+      "input_speed_bits": "0x40000000",
+      "trial": false,
+      "profile": "locked",
+      "pay_modal": true,
+      "speed_events": [],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": false,
+      "input_speed_bits": "0x40000000",
+      "trial": false,
+      "profile": "unlocked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x3f800000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": false,
+      "input_speed_bits": "0x40000000",
+      "trial": true,
+      "profile": "absent",
+      "pay_modal": false,
+      "speed_events": [
+        "0x3f800000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": false,
+      "input_speed_bits": "0x40000000",
+      "trial": true,
+      "profile": "locked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x3f800000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": false,
+      "input_speed_bits": "0x40000000",
+      "trial": true,
+      "profile": "unlocked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x3f800000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": true,
+      "input_speed_bits": "0x3f800000",
+      "trial": false,
+      "profile": "absent",
+      "pay_modal": false,
+      "speed_events": [
+        "0x40000000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": true,
+      "input_speed_bits": "0x3f800000",
+      "trial": false,
+      "profile": "locked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x40000000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": true,
+      "input_speed_bits": "0x3f800000",
+      "trial": false,
+      "profile": "unlocked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x40000000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": true,
+      "input_speed_bits": "0x3f800000",
+      "trial": true,
+      "profile": "absent",
+      "pay_modal": false,
+      "speed_events": [
+        "0x40000000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": true,
+      "input_speed_bits": "0x3f800000",
+      "trial": true,
+      "profile": "locked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x40000000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": true,
+      "input_speed_bits": "0x3f800000",
+      "trial": true,
+      "profile": "unlocked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x40000000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": true,
+      "input_speed_bits": "0x40000000",
+      "trial": false,
+      "profile": "absent",
+      "pay_modal": false,
+      "speed_events": [
+        "0x3f800000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": true,
+      "input_speed_bits": "0x40000000",
+      "trial": false,
+      "profile": "locked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x3f800000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": true,
+      "input_speed_bits": "0x40000000",
+      "trial": false,
+      "profile": "unlocked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x3f800000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": true,
+      "input_speed_bits": "0x40000000",
+      "trial": true,
+      "profile": "absent",
+      "pay_modal": false,
+      "speed_events": [
+        "0x3f800000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": true,
+      "input_speed_bits": "0x40000000",
+      "trial": true,
+      "profile": "locked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x3f800000"
+      ],
+      "feature_list_preserved": true
+    },
+    {
+      "patched": true,
+      "input_speed_bits": "0x40000000",
+      "trial": true,
+      "profile": "unlocked",
+      "pay_modal": false,
+      "speed_events": [
+        "0x3f800000"
+      ],
+      "feature_list_preserved": true
+    }
+  ],
+  "runtime_verified": false,
+  "scope": "Execute original SpeedChange click handler and original feature lookup; soft-float comparison, player accessor and event-bus boundaries controlled. Only the button-local feature-20 call is replaced; no purchase records, currency or global entitlement function changed."
+}

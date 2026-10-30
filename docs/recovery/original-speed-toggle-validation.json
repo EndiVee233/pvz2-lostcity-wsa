@@ -1,0 +1,10 @@
+{
+  "actual_game_speed_sequence": [
+    1.0,
+    2.0,
+    1.0
+  ],
+  "read_only_process_observation": true,
+  "changed_via_real_touch_events": true,
+  "game_left_paused": true
+}

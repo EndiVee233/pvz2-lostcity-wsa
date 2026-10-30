@@ -1,0 +1,736 @@
+{
+  "source_sha256": "8e5d9a2afa70efb56a92012b13352770acaac56a32e56ecf7571e9096d6c73d6",
+  "patched_sha256": "a91e002a63326750e14043084d59d2076a6234c15f62f77c87a56b19fc9c70b7",
+  "ghidra_address": "0x2304b0",
+  "file_offset": "0x2204b0",
+  "before": "f04b2de9",
+  "after": "1eff2fe1",
+  "arm_cases_passed": 72,
+  "runtime_verified": false,
+  "cases": [
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 0,
+      "wave": null,
+      "mode": 0,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 0,
+      "wave": null,
+      "mode": 4,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 0,
+      "wave": null,
+      "mode": 6,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 0,
+      "wave": 2,
+      "mode": 0,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 0,
+      "wave": 2,
+      "mode": 4,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 0,
+      "wave": 2,
+      "mode": 6,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 0,
+      "wave": 3,
+      "mode": 0,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 0,
+      "wave": 3,
+      "mode": 4,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 0,
+      "wave": 3,
+      "mode": 6,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 1,
+      "wave": null,
+      "mode": 0,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 1,
+      "wave": null,
+      "mode": 4,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 1,
+      "wave": null,
+      "mode": 6,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 1,
+      "wave": 2,
+      "mode": 0,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 1,
+      "wave": 2,
+      "mode": 4,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 1,
+      "wave": 2,
+      "mode": 6,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 1,
+      "wave": 3,
+      "mode": 0,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 1,
+      "wave": 3,
+      "mode": 4,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 0,
+      "armed": 1,
+      "wave": 3,
+      "mode": 6,
+      "events": []
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 0,
+      "wave": null,
+      "mode": 0,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 0,
+      "wave": null,
+      "mode": 4,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 0,
+      "wave": null,
+      "mode": 6,
+      "events": [
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 0,
+      "wave": 2,
+      "mode": 0,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 0,
+      "wave": 2,
+      "mode": 4,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 0,
+      "wave": 2,
+      "mode": 6,
+      "events": [
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 0,
+      "wave": 3,
+      "mode": 0,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 0,
+      "wave": 3,
+      "mode": 4,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 0,
+      "wave": 3,
+      "mode": 6,
+      "events": [
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 1,
+      "wave": null,
+      "mode": 0,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 1,
+      "wave": null,
+      "mode": 4,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 1,
+      "wave": null,
+      "mode": 6,
+      "events": [
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 1,
+      "wave": 2,
+      "mode": 0,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 1,
+      "wave": 2,
+      "mode": 4,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 1,
+      "wave": 2,
+      "mode": 6,
+      "events": [
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 1,
+      "wave": 3,
+      "mode": 0,
+      "events": [
+        "recharge_gift",
+        "kill_record",
+        "zombie_record",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 1,
+      "wave": 3,
+      "mode": 4,
+      "events": [
+        "recharge_gift",
+        "kill_record",
+        "zombie_record",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": false,
+      "valid": 1,
+      "armed": 1,
+      "wave": 3,
+      "mode": 6,
+      "events": [
+        "recharge_gift",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 0,
+      "wave": null,
+      "mode": 0,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 0,
+      "wave": null,
+      "mode": 4,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 0,
+      "wave": null,
+      "mode": 6,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 0,
+      "wave": 2,
+      "mode": 0,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 0,
+      "wave": 2,
+      "mode": 4,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 0,
+      "wave": 2,
+      "mode": 6,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 0,
+      "wave": 3,
+      "mode": 0,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 0,
+      "wave": 3,
+      "mode": 4,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 0,
+      "wave": 3,
+      "mode": 6,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 1,
+      "wave": null,
+      "mode": 0,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 1,
+      "wave": null,
+      "mode": 4,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 1,
+      "wave": null,
+      "mode": 6,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 1,
+      "wave": 2,
+      "mode": 0,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 1,
+      "wave": 2,
+      "mode": 4,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 1,
+      "wave": 2,
+      "mode": 6,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 1,
+      "wave": 3,
+      "mode": 0,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 1,
+      "wave": 3,
+      "mode": 4,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 0,
+      "armed": 1,
+      "wave": 3,
+      "mode": 6,
+      "events": []
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 0,
+      "wave": null,
+      "mode": 0,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 0,
+      "wave": null,
+      "mode": 4,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 0,
+      "wave": null,
+      "mode": 6,
+      "events": [
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 0,
+      "wave": 2,
+      "mode": 0,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 0,
+      "wave": 2,
+      "mode": 4,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 0,
+      "wave": 2,
+      "mode": 6,
+      "events": [
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 0,
+      "wave": 3,
+      "mode": 0,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 0,
+      "wave": 3,
+      "mode": 4,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 0,
+      "wave": 3,
+      "mode": 6,
+      "events": [
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 1,
+      "wave": null,
+      "mode": 0,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 1,
+      "wave": null,
+      "mode": 4,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 1,
+      "wave": null,
+      "mode": 6,
+      "events": [
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 1,
+      "wave": 2,
+      "mode": 0,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 1,
+      "wave": 2,
+      "mode": 4,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 1,
+      "wave": 2,
+      "mode": 6,
+      "events": [
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 1,
+      "wave": 3,
+      "mode": 0,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "kill_count",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 1,
+      "wave": 3,
+      "mode": 4,
+      "events": [
+        "kill_record",
+        "zombie_record",
+        "ordinary_drops"
+      ]
+    },
+    {
+      "patched": true,
+      "valid": 1,
+      "armed": 1,
+      "wave": 3,
+      "mode": 6,
+      "events": [
+        "kill_count",
+        "ordinary_drops"
+      ]
+    }
+  ],
+  "scope": "Original zombie-death callback executed; controlled eligibility, wave, profile and ordinary-drop boundaries. Only the void present_newer spawner entry returns early. Ordinary drop routine remains original and is still called; individual reward RNG not emulated."
+}

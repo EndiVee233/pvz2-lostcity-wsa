@@ -1,0 +1,16 @@
+WSA online_cpus=20; worker-cap selection checks passed
+PASS block=4 size=1031x1027 cpus=20 strips=16 created=16 failure=0 ms=114
+PASS block=4 size=257x259 cpus=1 strips=2 created=0 failure=0 ms=69
+PASS block=4 size=1031x1027 cpus=20 strips=16 created=8 failure=1 ms=190
+PASS block=4 size=1031x1027 cpus=20 strips=16 created=0 failure=2 ms=1098
+PASS block=5 size=1031x1027 cpus=20 strips=16 created=16 failure=0 ms=92
+PASS block=5 size=257x259 cpus=1 strips=2 created=0 failure=0 ms=57
+PASS block=5 size=1031x1027 cpus=20 strips=16 created=8 failure=1 ms=141
+PASS block=5 size=1031x1027 cpus=20 strips=16 created=0 failure=2 ms=916
+PASS block=6 size=1031x1027 cpus=20 strips=16 created=16 failure=0 ms=71
+PASS block=6 size=257x259 cpus=1 strips=2 created=0 failure=0 ms=42
+PASS block=6 size=1031x1027 cpus=20 strips=16 created=8 failure=1 ms=113
+PASS block=6 size=1031x1027 cpus=20 strips=16 created=0 failure=2 ms=668
+PASS block=6 size=4096x4096 cpus=4 strips=17 created=4 failure=0 ms=2879
+PASS block=6 size=4096x4096 cpus=20 strips=17 created=16 failure=0 ms=1174
+PASS all pixel comparisons, capped workers and failed-thread joins

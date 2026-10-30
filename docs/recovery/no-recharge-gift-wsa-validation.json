@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-30",
+  "installed_variant": "v11-runtime-only",
+  "startup_verified": true,
+  "installed_native_sha256": "a91e002a63326750e14043084d59d2076a6234c15f62f77c87a56b19fc9c70b7",
+  "live_spawner_entry_bytes": "1eff2fe1",
+  "profile_count": 2,
+  "profile_names_uids_preserved": true,
+  "gems_preserved": true,
+  "currency_observations": [
+    {
+      "coins_before": 0,
+      "coins_after": 0,
+      "gems_before": 0,
+      "gems_after": 0
+    },
+    {
+      "coins_before": 8780,
+      "coins_after": 8800,
+      "gems_before": 18,
+      "gems_after": 18
+    }
+  ],
+  "full_runtime_common_payloads_identical": true,
+  "full_apk_sha256": "f2fc92088bac761e9d6eb9f2055f9f60ae00de3f482da2c13bc156f6ec0a6d44",
+  "runtime_apk_sha256": "636e7da2a04493e8c3e14bb76e9a34cb6bc326ddab4d97db81695610db96e2d4",
+  "arm_cases_passed": 72,
+  "random_drop_long_session_verified": false,
+  "fatal_log_lines": []
+}

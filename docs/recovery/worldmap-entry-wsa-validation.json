@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-30",
+  "application_id": "com.popcap.pvz2cthd.reconstruction",
+  "installed_variant": "v7-runtime-only",
+  "runtime_verified": true,
+  "full_apk_runtime_payload_matches_installed_test_variant": true,
+  "full_apk_assets_complete": true,
+  "installed_test_reuses_existing_extracted_resources": true,
+  "full_apk_sha256": "f07ddc668c4166fa3c51609de4ae2975718a39271decdaa265464627f7a7d853",
+  "runtime_test_apk_sha256": "0a6ec4e97aae0abc6d1f2d20f9b583b37d52d17e4e7c7b6090e6cbd21a0f89d2",
+  "native_sha256": {
+    "libSrc.so": "0176f226b382f55b39fdff151e862c0789c6d3f33511345b6d7d9205d06557d6",
+    "libRestart.so": "7d5d1e7f48d773f9ae10b18f168c949915b0b7ec5678c75d9ddfc71f6bcf0b5c"
+  },
+  "profile_count": 2,
+  "profile_uids_and_names_preserved": true,
+  "visual_checks": {
+    "lottery_removed": true,
+    "recharge_removed": true,
+    "gemreturn_removed": true,
+    "plant_trial_removed": true,
+    "gems_display": 18,
+    "coins_display": 5880,
+    "after_four_old_position_taps_no_dialog": true
+  },
+  "glshim_thread_limit_observed": 16,
+  "glshim_worker_log_count": 8,
+  "fatal_log_lines": [],
+  "scope": "Menu/world-map rendering and old-entry-position taps only; no purchase or full campaign tests."
+}

@@ -1,0 +1,605 @@
+{
+  "source_sha256": "fd7b6a33423cb4c18c117a2dab103f6ae56b92be711a144a6110533b92076928",
+  "patched_sha256": "8e5d9a2afa70efb56a92012b13352770acaac56a32e56ecf7571e9096d6c73d6",
+  "patches": [
+    {
+      "ghidra_address": "0xf864a8",
+      "file_offset": "0xf764a8",
+      "length": 152,
+      "before_sha256": "447a660c453ee9fe1d79930d887f20c4fe5ef9188c7e269e89cdc48235a53475",
+      "after_hex": "79402de908d04de20d00a0e10010a0e32d45c7eb000050e31a00001a00509de5000055e3170000daf5fbffeb0c5080e55c008fe2001090e5010080e0000090e5000050e30f00000af9cce0eb000050e30c00000a0050a0e1320e85e20c4adfeb000050e30300001a480095e54c1095e5010050e10300001a0500a0e16bc6deeb0500a0e1e46adeeb08d08de27940bde81b0000ea689b8b00",
+      "scope": "Challenge time-task failure body only; PIC device clock and original daily reset"
+    },
+    {
+      "ghidra_address": "0xa4880c",
+      "before": "1c3090e5",
+      "after": "4bf714ea",
+      "stub_address": "0xf86540",
+      "stub_hex": "000057e30030a0031c309015af08ebea",
+      "scope": "Challenge submenu introduction lock only"
+    }
+  ],
+  "arm_cases_passed": 135,
+  "cases": [
+    {
+      "server_success": false,
+      "mode": 0,
+      "stored_day": 1260929,
+      "refreshed": true
+    },
+    {
+      "server_success": false,
+      "mode": 0,
+      "stored_day": 1260930,
+      "refreshed": false
+    },
+    {
+      "server_success": false,
+      "mode": 0,
+      "stored_day": 1260931,
+      "refreshed": false
+    },
+    {
+      "server_success": false,
+      "mode": 1,
+      "stored_day": 1260929,
+      "refreshed": true
+    },
+    {
+      "server_success": false,
+      "mode": 1,
+      "stored_day": 1260930,
+      "refreshed": false
+    },
+    {
+      "server_success": false,
+      "mode": 1,
+      "stored_day": 1260931,
+      "refreshed": false
+    },
+    {
+      "server_success": false,
+      "mode": 2,
+      "stored_day": 1260929,
+      "refreshed": true
+    },
+    {
+      "server_success": false,
+      "mode": 2,
+      "stored_day": 1260930,
+      "refreshed": false
+    },
+    {
+      "server_success": false,
+      "mode": 2,
+      "stored_day": 1260931,
+      "refreshed": false
+    },
+    {
+      "server_success": true,
+      "mode": 0,
+      "stored_day": 1260929,
+      "refreshed": false
+    },
+    {
+      "server_success": true,
+      "mode": 0,
+      "stored_day": 1260930,
+      "refreshed": false
+    },
+    {
+      "server_success": true,
+      "mode": 0,
+      "stored_day": 1260931,
+      "refreshed": false
+    },
+    {
+      "server_success": true,
+      "mode": 1,
+      "stored_day": 1260929,
+      "refreshed": false
+    },
+    {
+      "server_success": true,
+      "mode": 1,
+      "stored_day": 1260930,
+      "refreshed": false
+    },
+    {
+      "server_success": true,
+      "mode": 1,
+      "stored_day": 1260931,
+      "refreshed": false
+    },
+    {
+      "server_success": true,
+      "mode": 2,
+      "stored_day": 1260929,
+      "refreshed": false
+    },
+    {
+      "server_success": true,
+      "mode": 2,
+      "stored_day": 1260930,
+      "refreshed": false
+    },
+    {
+      "server_success": true,
+      "mode": 2,
+      "stored_day": 1260931,
+      "refreshed": false
+    }
+  ],
+  "intro_cases": [
+    {
+      "menu": 0,
+      "profile_state": 0
+    },
+    {
+      "menu": 0,
+      "profile_state": 9
+    },
+    {
+      "menu": 0,
+      "profile_state": 12
+    },
+    {
+      "menu": 0,
+      "profile_state": 15
+    },
+    {
+      "menu": 0,
+      "profile_state": 16
+    },
+    {
+      "menu": 0,
+      "profile_state": 19
+    },
+    {
+      "menu": 0,
+      "profile_state": 21
+    },
+    {
+      "menu": 0,
+      "profile_state": 23
+    },
+    {
+      "menu": 0,
+      "profile_state": 32
+    },
+    {
+      "menu": 1,
+      "profile_state": 0
+    },
+    {
+      "menu": 1,
+      "profile_state": 9
+    },
+    {
+      "menu": 1,
+      "profile_state": 12
+    },
+    {
+      "menu": 1,
+      "profile_state": 15
+    },
+    {
+      "menu": 1,
+      "profile_state": 16
+    },
+    {
+      "menu": 1,
+      "profile_state": 19
+    },
+    {
+      "menu": 1,
+      "profile_state": 21
+    },
+    {
+      "menu": 1,
+      "profile_state": 23
+    },
+    {
+      "menu": 1,
+      "profile_state": 32
+    },
+    {
+      "menu": 2,
+      "profile_state": 0
+    },
+    {
+      "menu": 2,
+      "profile_state": 9
+    },
+    {
+      "menu": 2,
+      "profile_state": 12
+    },
+    {
+      "menu": 2,
+      "profile_state": 15
+    },
+    {
+      "menu": 2,
+      "profile_state": 16
+    },
+    {
+      "menu": 2,
+      "profile_state": 19
+    },
+    {
+      "menu": 2,
+      "profile_state": 21
+    },
+    {
+      "menu": 2,
+      "profile_state": 23
+    },
+    {
+      "menu": 2,
+      "profile_state": 32
+    },
+    {
+      "menu": 3,
+      "profile_state": 0
+    },
+    {
+      "menu": 3,
+      "profile_state": 9
+    },
+    {
+      "menu": 3,
+      "profile_state": 12
+    },
+    {
+      "menu": 3,
+      "profile_state": 15
+    },
+    {
+      "menu": 3,
+      "profile_state": 16
+    },
+    {
+      "menu": 3,
+      "profile_state": 19
+    },
+    {
+      "menu": 3,
+      "profile_state": 21
+    },
+    {
+      "menu": 3,
+      "profile_state": 23
+    },
+    {
+      "menu": 3,
+      "profile_state": 32
+    },
+    {
+      "menu": 4,
+      "profile_state": 0
+    },
+    {
+      "menu": 4,
+      "profile_state": 9
+    },
+    {
+      "menu": 4,
+      "profile_state": 12
+    },
+    {
+      "menu": 4,
+      "profile_state": 15
+    },
+    {
+      "menu": 4,
+      "profile_state": 16
+    },
+    {
+      "menu": 4,
+      "profile_state": 19
+    },
+    {
+      "menu": 4,
+      "profile_state": 21
+    },
+    {
+      "menu": 4,
+      "profile_state": 23
+    },
+    {
+      "menu": 4,
+      "profile_state": 32
+    },
+    {
+      "menu": 5,
+      "profile_state": 0
+    },
+    {
+      "menu": 5,
+      "profile_state": 9
+    },
+    {
+      "menu": 5,
+      "profile_state": 12
+    },
+    {
+      "menu": 5,
+      "profile_state": 15
+    },
+    {
+      "menu": 5,
+      "profile_state": 16
+    },
+    {
+      "menu": 5,
+      "profile_state": 19
+    },
+    {
+      "menu": 5,
+      "profile_state": 21
+    },
+    {
+      "menu": 5,
+      "profile_state": 23
+    },
+    {
+      "menu": 5,
+      "profile_state": 32
+    },
+    {
+      "menu": 6,
+      "profile_state": 0
+    },
+    {
+      "menu": 6,
+      "profile_state": 9
+    },
+    {
+      "menu": 6,
+      "profile_state": 12
+    },
+    {
+      "menu": 6,
+      "profile_state": 15
+    },
+    {
+      "menu": 6,
+      "profile_state": 16
+    },
+    {
+      "menu": 6,
+      "profile_state": 19
+    },
+    {
+      "menu": 6,
+      "profile_state": 21
+    },
+    {
+      "menu": 6,
+      "profile_state": 23
+    },
+    {
+      "menu": 6,
+      "profile_state": 32
+    },
+    {
+      "menu": 7,
+      "profile_state": 0
+    },
+    {
+      "menu": 7,
+      "profile_state": 9
+    },
+    {
+      "menu": 7,
+      "profile_state": 12
+    },
+    {
+      "menu": 7,
+      "profile_state": 15
+    },
+    {
+      "menu": 7,
+      "profile_state": 16
+    },
+    {
+      "menu": 7,
+      "profile_state": 19
+    },
+    {
+      "menu": 7,
+      "profile_state": 21
+    },
+    {
+      "menu": 7,
+      "profile_state": 23
+    },
+    {
+      "menu": 7,
+      "profile_state": 32
+    },
+    {
+      "menu": 8,
+      "profile_state": 0
+    },
+    {
+      "menu": 8,
+      "profile_state": 9
+    },
+    {
+      "menu": 8,
+      "profile_state": 12
+    },
+    {
+      "menu": 8,
+      "profile_state": 15
+    },
+    {
+      "menu": 8,
+      "profile_state": 16
+    },
+    {
+      "menu": 8,
+      "profile_state": 19
+    },
+    {
+      "menu": 8,
+      "profile_state": 21
+    },
+    {
+      "menu": 8,
+      "profile_state": 23
+    },
+    {
+      "menu": 8,
+      "profile_state": 32
+    },
+    {
+      "menu": 9,
+      "profile_state": 0
+    },
+    {
+      "menu": 9,
+      "profile_state": 9
+    },
+    {
+      "menu": 9,
+      "profile_state": 12
+    },
+    {
+      "menu": 9,
+      "profile_state": 15
+    },
+    {
+      "menu": 9,
+      "profile_state": 16
+    },
+    {
+      "menu": 9,
+      "profile_state": 19
+    },
+    {
+      "menu": 9,
+      "profile_state": 21
+    },
+    {
+      "menu": 9,
+      "profile_state": 23
+    },
+    {
+      "menu": 9,
+      "profile_state": 32
+    },
+    {
+      "menu": 10,
+      "profile_state": 0
+    },
+    {
+      "menu": 10,
+      "profile_state": 9
+    },
+    {
+      "menu": 10,
+      "profile_state": 12
+    },
+    {
+      "menu": 10,
+      "profile_state": 15
+    },
+    {
+      "menu": 10,
+      "profile_state": 16
+    },
+    {
+      "menu": 10,
+      "profile_state": 19
+    },
+    {
+      "menu": 10,
+      "profile_state": 21
+    },
+    {
+      "menu": 10,
+      "profile_state": 23
+    },
+    {
+      "menu": 10,
+      "profile_state": 32
+    },
+    {
+      "menu": 11,
+      "profile_state": 0
+    },
+    {
+      "menu": 11,
+      "profile_state": 9
+    },
+    {
+      "menu": 11,
+      "profile_state": 12
+    },
+    {
+      "menu": 11,
+      "profile_state": 15
+    },
+    {
+      "menu": 11,
+      "profile_state": 16
+    },
+    {
+      "menu": 11,
+      "profile_state": 19
+    },
+    {
+      "menu": 11,
+      "profile_state": 21
+    },
+    {
+      "menu": 11,
+      "profile_state": 23
+    },
+    {
+      "menu": 11,
+      "profile_state": 32
+    },
+    {
+      "menu": 12,
+      "profile_state": 0
+    },
+    {
+      "menu": 12,
+      "profile_state": 9
+    },
+    {
+      "menu": 12,
+      "profile_state": 12
+    },
+    {
+      "menu": 12,
+      "profile_state": 15
+    },
+    {
+      "menu": 12,
+      "profile_state": 16
+    },
+    {
+      "menu": 12,
+      "profile_state": 19
+    },
+    {
+      "menu": 12,
+      "profile_state": 21
+    },
+    {
+      "menu": 12,
+      "profile_state": 23
+    },
+    {
+      "menu": 12,
+      "profile_state": 32
+    }
+  ],
+  "runtime_verified": false,
+  "scope": "Original daily limits, same-day persistence and backward-clock protection retained; WSA gameplay/rewards need separate verification."
+}

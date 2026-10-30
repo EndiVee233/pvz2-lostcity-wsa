@@ -24,6 +24,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.security.MessageDigest;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -49,6 +50,10 @@ public class BootActivity extends Activity {
     private volatile boolean cacheDone = false;
     private volatile boolean cacheFailed = false;
     private long cacheTotal = 1;
+    private boolean speedResourceStarted = false;
+    private boolean speedResourceReady = false;
+    private static final String SPEED_RESOURCE_SHA = "0aae11cf23e05377026323816f6e458264bdc193b312177bca6824589fa1d29f";
+    private static final String BASE_RESOURCE_SHA = "12af3e81260ee7ad2a438a9175506839474a1ec4b7aa39b61ed9bda7fdda5835";
 
     @Override // android.app.Activity
     protected void onCreate(Bundle bundle) {
@@ -257,6 +262,29 @@ public class BootActivity extends Activity {
         if (this.gameStarted) {
             return;
         }
+        if (!speedResourceReady) {
+            if (speedResourceStarted) return;
+            speedResourceStarted = true;
+            new Thread(new Runnable() {
+                public void run() {
+                    try {
+                        applyOriginalSpeedResource();
+                        ui.post(new Runnable() {
+                            public void run() {
+                                speedResourceReady = true;
+                                startGameWithCache();
+                            }
+                        });
+                    } catch (final Exception failure) {
+                        Log.e(TAG, "original speed resource update failed", failure);
+                        ui.post(new Runnable() {
+                            public void run() { fail("资源更新失败，请重启应用重试"); }
+                        });
+                    }
+                }
+            }, "pvz2-speed-resource").start();
+            return;
+        }
         final File file = new File(getCacheDir(), "glcache");
         if (file.exists() && file.list() != null && file.list().length > 0) {
             startGame();
@@ -303,6 +331,58 @@ public class BootActivity extends Activity {
         } catch (Throwable th) {
         }
         return null;
+    }
+
+    private static String resourceSha(File file) throws Exception {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        InputStream input = new FileInputStream(file);
+        try {
+            byte[] buffer = new byte[65536];
+            int count;
+            while ((count = input.read(buffer)) != -1) digest.update(buffer, 0, count);
+        } finally { input.close(); }
+        StringBuilder text = new StringBuilder();
+        for (byte b : digest.digest()) {
+            int value = b & 255;
+            if (value < 16) text.append('0');
+            text.append(Integer.toHexString(value));
+        }
+        return text.toString();
+    }
+
+    private void applyOriginalSpeedResource() throws Exception {
+        InputStream overlay;
+        try {
+            overlay = getAssets().open("reconstruction/dynamic-original-speed.rsb.smf");
+        } catch (IOException noOverlay) {
+            // Other build variants do not package this optional resource update.
+            return;
+        }
+        try {
+            File base = getExternalFilesDir(null);
+            if (base == null) throw new IOException("Missing resource directory");
+            File target = new File(base, "dynamic.rsb.smf");
+            File marker = new File(base, ".original-speed-57d9c44");
+            if (marker.isFile() && target.length() == 23453696L) return;
+            String current = resourceSha(target);
+            if (!SPEED_RESOURCE_SHA.equals(current)) {
+                if (!BASE_RESOURCE_SHA.equals(current)) throw new IOException("Unexpected resource version");
+                File temporary = new File(base, "dynamic-original-speed.tmp");
+                FileOutputStream output = new FileOutputStream(temporary);
+                try {
+                    byte[] buffer = new byte[65536];
+                    int count;
+                    while ((count = overlay.read(buffer)) != -1) output.write(buffer, 0, count);
+                    output.getFD().sync();
+                } finally { output.close(); }
+                if (!SPEED_RESOURCE_SHA.equals(resourceSha(temporary))) throw new IOException("Resource checksum mismatch");
+                if (!temporary.renameTo(target)) throw new IOException("Resource replacement failed");
+                Log.i(TAG, "original speed resource applied: 57d9c44");
+            } else {
+                Log.i(TAG, "original speed resource already current: 57d9c44");
+            }
+            if (!marker.createNewFile() && !marker.isFile()) throw new IOException("Resource marker failed");
+        } finally { overlay.close(); }
     }
 
     private void importCache(File file, File directory) {

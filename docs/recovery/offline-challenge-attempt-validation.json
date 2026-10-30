@@ -1,0 +1,276 @@
+{
+  "arm_cases_passed": 27,
+  "cases": [
+    {
+      "mode": 0,
+      "initial_count": 0,
+      "key": 0,
+      "after_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": 0,
+      "initial_count": 0,
+      "key": 13,
+      "after_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": 0,
+      "initial_count": 0,
+      "key": 305419903,
+      "after_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": 0,
+      "initial_count": 1,
+      "key": 0,
+      "after_counts": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "mode": 0,
+      "initial_count": 1,
+      "key": 13,
+      "after_counts": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "mode": 0,
+      "initial_count": 1,
+      "key": 305419903,
+      "after_counts": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "mode": 0,
+      "initial_count": 3,
+      "key": 0,
+      "after_counts": [
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "mode": 0,
+      "initial_count": 3,
+      "key": 13,
+      "after_counts": [
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "mode": 0,
+      "initial_count": 3,
+      "key": 305419903,
+      "after_counts": [
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "mode": 1,
+      "initial_count": 0,
+      "key": 0,
+      "after_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": 1,
+      "initial_count": 0,
+      "key": 13,
+      "after_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": 1,
+      "initial_count": 0,
+      "key": 305419903,
+      "after_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": 1,
+      "initial_count": 1,
+      "key": 0,
+      "after_counts": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "mode": 1,
+      "initial_count": 1,
+      "key": 13,
+      "after_counts": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "mode": 1,
+      "initial_count": 1,
+      "key": 305419903,
+      "after_counts": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "mode": 1,
+      "initial_count": 3,
+      "key": 0,
+      "after_counts": [
+        3,
+        2,
+        3
+      ]
+    },
+    {
+      "mode": 1,
+      "initial_count": 3,
+      "key": 13,
+      "after_counts": [
+        3,
+        2,
+        3
+      ]
+    },
+    {
+      "mode": 1,
+      "initial_count": 3,
+      "key": 305419903,
+      "after_counts": [
+        3,
+        2,
+        3
+      ]
+    },
+    {
+      "mode": 2,
+      "initial_count": 0,
+      "key": 0,
+      "after_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": 2,
+      "initial_count": 0,
+      "key": 13,
+      "after_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": 2,
+      "initial_count": 0,
+      "key": 305419903,
+      "after_counts": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mode": 2,
+      "initial_count": 1,
+      "key": 0,
+      "after_counts": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "mode": 2,
+      "initial_count": 1,
+      "key": 13,
+      "after_counts": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "mode": 2,
+      "initial_count": 1,
+      "key": 305419903,
+      "after_counts": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "mode": 2,
+      "initial_count": 3,
+      "key": 0,
+      "after_counts": [
+        3,
+        3,
+        2
+      ]
+    },
+    {
+      "mode": 2,
+      "initial_count": 3,
+      "key": 13,
+      "after_counts": [
+        3,
+        3,
+        2
+      ]
+    },
+    {
+      "mode": 2,
+      "initial_count": 3,
+      "key": 305419903,
+      "after_counts": [
+        3,
+        3,
+        2
+      ]
+    }
+  ],
+  "scope": "Original victory-side attempt deduction only; no synthetic victory or runtime memory writes."
+}

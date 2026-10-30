@@ -19,6 +19,15 @@
 #define TAG "GLShim"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, TAG, __VA_ARGS__)
 
+#ifndef PVZ2_GL_CACHE_ROOT
+#define PVZ2_GL_CACHE_ROOT "/data/data/com.popcap.pvz2cthd/cache"
+#endif
+#ifndef PVZ2_ASTC_MAX_THREADS
+#define PVZ2_ASTC_MAX_THREADS 16
+#endif
+static_assert(PVZ2_ASTC_MAX_THREADS >= 1 && PVZ2_ASTC_MAX_THREADS <= 16,
+              "ASTC worker limit must be between 1 and 16");
+
 typedef void (*PFN_glTexImage2D)(GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GLenum, GLenum, const void *);
 typedef void (*PFN_glTexSubImage2D)(GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, const void *);
 typedef void (*PFN_glCompressedTexImage2D)(GLenum, GLint, GLenum, GLsizei, GLsizei, GLint, GLsizei, const void *);
@@ -259,8 +268,8 @@ static uint64_t astc_hash(const uint8_t *p, size_t n, int w, int h, int fmt, int
 }
 
 static void ensure_astc_cache_dir() {
-    mkdir("/data/data/com.popcap.pvz2cthd/cache", 0770);
-    mkdir("/data/data/com.popcap.pvz2cthd/cache/glcache", 0770);
+    mkdir(PVZ2_GL_CACHE_ROOT, 0770);
+    mkdir(PVZ2_GL_CACHE_ROOT "/glcache", 0770);
 }
 
 static uint8_t *cache_read_rgba(const char *path, int *w, int *h) {
@@ -327,14 +336,35 @@ static void *astc_strip_worker(void *arg) {
     return nullptr;
 }
 
+static int astc_worker_count(long online_cpus, size_t jobs) {
+    if (jobs == 0) return 0;
+    // sysconf may return -1. Keep that case and single-CPU devices serial.
+    int count = online_cpus < 1 ? 1 :
+        (online_cpus > PVZ2_ASTC_MAX_THREADS ? PVZ2_ASTC_MAX_THREADS : (int)online_cpus);
+    if (jobs < (size_t)count) count = (int)jobs;
+    return count;
+}
+
+static int astc_strip_block_rows(int width, int height, int by) {
+    int rows = 256 / by;
+    if (rows < 1) rows = 1;
+    // Give large textures enough independent jobs to use the higher limit.
+    // Keep every split on an ASTC block boundary, including 5x5 and 6x6.
+    if ((long long)width * height >= 1024 * 1024) {
+        const int count = astc_worker_count(sysconf(_SC_NPROCESSORS_ONLN),
+                                            (size_t)((height + by - 1) / by));
+        const int balanced = ((height + by - 1) / by + count - 1) / count;
+        if (balanced < rows) rows = balanced;
+    }
+    return rows;
+}
+
 static bool astc_decode_parallel(const uint8_t *data, size_t imageSize,
                                  int width, int height, int bx, int by,
                                  astc_codec::FootprintType fp,
                                  std::vector<AstcStrip> &strips) {
-    const int maxThreads = 4;
-    int nthreads = (int)sysconf(_SC_NPROCESSORS_ONLN);
-    if (nthreads < 2) nthreads = 2;
-    if (nthreads > maxThreads) nthreads = maxThreads;
+    const int maxThreads = PVZ2_ASTC_MAX_THREADS;
+    const int nthreads = astc_worker_count(sysconf(_SC_NPROCESSORS_ONLN), strips.size());
 
     std::atomic<int> next(0);
     AstcStripCtx ctx;
@@ -349,8 +379,9 @@ static bool astc_decode_parallel(const uint8_t *data, size_t imageSize,
 
     pthread_t tids[maxThreads];
     int started = 0;
-    for (int i = 0; i < nthreads; i++) {
-        if (pthread_create(&tids[i], nullptr, astc_strip_worker, &ctx) == 0) {
+    for (int i = 0; nthreads > 1 && i < nthreads; i++) {
+        // Failed creations must not leave holes in the list passed to join.
+        if (pthread_create(&tids[started], nullptr, astc_strip_worker, &ctx) == 0) {
             started++;
         }
     }
@@ -358,8 +389,9 @@ static bool astc_decode_parallel(const uint8_t *data, size_t imageSize,
         astc_strip_worker(&ctx);
     } else {
         for (int i = 0; i < started; i++) pthread_join(tids[i], nullptr);
-        astc_strip_worker(&ctx);
     }
+    LOGI("ASTC workers limit=%d selected=%d started=%d strips=%zu",
+         maxThreads, nthreads, started, strips.size());
 
     bool ok = true;
     for (size_t i = 0; i < strips.size(); i++) {
@@ -427,7 +459,7 @@ extern "C" void glCompressedTexImage2D(GLenum target, GLint level, GLenum intern
             if (level == 0 && (long long)width * height >= 1024 * 1024) {
                 ensure_astc_cache_dir();
                 snprintf(cpath, sizeof(cpath),
-                         "/data/data/com.popcap.pvz2cthd/cache/glcache/%016llx.rgba",
+                         PVZ2_GL_CACHE_ROOT "/glcache/%016llx.rgba",
                          (unsigned long long)hash);
                 int cw = 0, ch = 0;
                 uint8_t *cb = cache_read_rgba(cpath, &cw, &ch);
@@ -440,8 +472,7 @@ extern "C" void glCompressedTexImage2D(GLenum target, GLint level, GLenum intern
             }
             int blocksPerRow = (width + bx - 1) / bx;
             int blockRows = (height + by - 1) / by;
-            int stripBlocks = 256 / by;
-            if (stripBlocks < 1) stripBlocks = 1;
+            int stripBlocks = astc_strip_block_rows(width, height, by);
             std::vector<AstcStrip> strips;
             for (int r = 0; r < blockRows; r += stripBlocks) {
                 int rows = blockRows - r;

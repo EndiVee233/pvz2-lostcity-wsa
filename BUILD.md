@@ -45,6 +45,24 @@ cmake --build build -j1
 
 `astc-codec` is added as a subdirectory; place it next to `src/glshim`.
 
+Alternatively, on Windows, build `libRestart.so` directly with local NDK and
+astc-codec checkouts (use an ASCII output directory):
+
+```powershell
+python src/glshim/build.py --ndk C:/tools/android-ndk --astc C:/tools/astc-codec --output C:/build/pvz2-glshim --test
+```
+
+The ASTC runtime worker limit is 16, capped by online CPUs and available strip
+jobs. Failed thread creation falls back to fewer workers or synchronous decoding.
+This runtime setting is independent of CMake's build-job count. For the isolated
+test application, also pass
+`--cache-root /data/data/com.popcap.pvz2cthd.reconstruction/cache`.
+The Android `test_decode` executable requires astc-codec's
+`src/decoder/testdata/atlas_small_{4x4,5x5,6x6}.astc` in its directory argument.
+It compares production strip output byte-for-byte with serial decoding and
+checks partial/all thread-creation failure. The build script compiles API 21 ARMv7
+and statically links libc++; it does not package or sign the APK.
+
 ## 4. Resource parts
 
 Split the resource zip into <512 MB chunks so each asset can be opened by a 32-bit
@@ -157,3 +175,26 @@ python src/tools/repack_raw.py
 
 and replace `assets/pvz2data.zip.001/.002/.003` in the APK before signing.
 `src/tools/rsbtool.py` is the minimal RSB reader used by the patcher.
+
+## 8. Offline challenge recovery (local v10 candidate)
+
+In the analysis workspace with the original ARM library, local Python dependencies
+and the existing v9 reconstruction APK:
+
+```powershell
+python scripts/restore_offline_challenge.py
+python scripts/test_offline_challenge_attempts.py
+python scripts/build_multiuser_test.py v10
+```
+
+The challenge task alone falls back to the device clock and original daily reset
+when its time request fails. The challenge submenu also bypasses its introduction
+highlight lock without changing saved tutorial progress or difficulty unlocks.
+The builder preserves the isolated application ID and full resource parts.
+This remains a patch of the original engine, not a full source-only game build.
+
+WSA tested all three normal challenge level loads. Full victory/reward collection
+and hard/legend difficulties remain unverified. The observation/validation scripts
+expect private snapshots from an existing isolated test install; they are not a
+fresh-install automated gameplay suite. See
+`docs/recovery/离线挑战模式恢复结果.md` for hashes and exact test boundaries.

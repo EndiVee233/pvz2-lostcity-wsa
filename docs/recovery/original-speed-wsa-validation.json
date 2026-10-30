@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-30",
+  "application_id": "com.popcap.pvz2cthd.reconstruction",
+  "installed_variant": "v9-runtime-only",
+  "runtime_verified": true,
+  "full_apk_runtime_payload_matches_installed_variant": true,
+  "full_apk_assets_complete": true,
+  "full_apk_sha256": "6141af5d0461e0735f7122768e262db4b484c5c12bd66c6cbe06b2765cef2608",
+  "test_apk_sha256": "a158fa535fd5db39fe6c5dbfcfee51887cea6c041b0ca6fd5caceac44126543c",
+  "native_sha256": {
+    "libSrc.so": "fd7b6a33423cb4c18c117a2dab103f6ae56b92be711a144a6110533b92076928",
+    "libRestart.so": "7d5d1e7f48d773f9ae10b18f168c949915b0b7ec5678c75d9ddfc71f6bcf0b5c"
+  },
+  "resource_sha256": "0aae11cf23e05377026323816f6e458264bdc193b312177bca6824589fa1d29f",
+  "resource_mtime_and_size": "1793336435:23453696",
+  "upgrade_resource_overlay_verified": true,
+  "profile_count": 2,
+  "profile_uids_and_names_preserved": true,
+  "actual_game_speed_sequence": [
+    1.0,
+    2.0,
+    1.0
+  ],
+  "speed_observation_read_only": true,
+  "original_double_arrow_style_visible": true,
+  "no_recharge_modal_on_toggle": true,
+  "worldmap_entries_still_removed": true,
+  "fatal_log_lines": [],
+  "scope": "Original-style resource migration and local in-level 1x/2x toggles; no full campaign or store transaction validation."
+}

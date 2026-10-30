@@ -1,0 +1,331 @@
+{
+  "source_sha256": "496a73a0b624a3b77586e3933f94c1224db5e52d1da53aacce5f621aca717891",
+  "patched_sha256": "0176f226b382f55b39fdff151e862c0789c6d3f33511345b6d7d9205d06557d6",
+  "patches": [
+    {
+      "ghidra_address": "0xa2bf74",
+      "file_offset": "0xa1bf74",
+      "role": "Lottery draw",
+      "before": "f04f2de920b08de2",
+      "after": "0000a0e31eff2fe1",
+      "relative_relocation": false
+    },
+    {
+      "ghidra_address": "0xa2bbb0",
+      "file_offset": "0xa1bbb0",
+      "role": "Lottery click",
+      "before": "f04b2de900c090e5",
+      "after": "0000a0e31eff2fe1",
+      "relative_relocation": false
+    },
+    {
+      "ghidra_address": "0x17d7ab4",
+      "file_offset": "0x17c6ab4",
+      "role": "Lottery hit-test",
+      "before": "0c689700",
+      "after": "74bfa100",
+      "relative_relocation": true
+    },
+    {
+      "ghidra_address": "0xe83de8",
+      "file_offset": "0xe73de8",
+      "role": "PlantTrial draw",
+      "before": "f04f2de920b08de2",
+      "after": "0000a0e31eff2fe1",
+      "relative_relocation": false
+    },
+    {
+      "ghidra_address": "0xe83c74",
+      "file_offset": "0xe73c74",
+      "role": "PlantTrial click",
+      "before": "f04b2de900c090e5",
+      "after": "0000a0e31eff2fe1",
+      "relative_relocation": false
+    },
+    {
+      "ghidra_address": "0x1808cd4",
+      "file_offset": "0x17f7cd4",
+      "role": "PlantTrial hit-test",
+      "before": "0c689700",
+      "after": "e83de700",
+      "relative_relocation": true
+    },
+    {
+      "ghidra_address": "0xe6facc",
+      "file_offset": "0xe5facc",
+      "role": "Gemreturn draw",
+      "before": "f04f2de920b08de2",
+      "after": "0000a0e31eff2fe1",
+      "relative_relocation": false
+    },
+    {
+      "ghidra_address": "0xe6f7f0",
+      "file_offset": "0xe5f7f0",
+      "role": "Gemreturn click",
+      "before": "f04b2de91cb08de2",
+      "after": "0000a0e31eff2fe1",
+      "relative_relocation": false
+    },
+    {
+      "ghidra_address": "0x1808674",
+      "file_offset": "0x17f7674",
+      "role": "Gemreturn hit-test",
+      "before": "0c689700",
+      "after": "ccfae500",
+      "relative_relocation": true
+    },
+    {
+      "ghidra_address": "0xa3221c",
+      "file_offset": "0xa2221c",
+      "role": "GemBank recharge image only",
+      "before": "a91c1deb",
+      "after": "0000a0e1",
+      "relative_relocation": false
+    },
+    {
+      "ghidra_address": "0x17d7ef4",
+      "file_offset": "0x17c6ef4",
+      "role": "GemBank read-only hit-test",
+      "before": "98743500",
+      "after": "74bfa100",
+      "relative_relocation": true
+    },
+    {
+      "ghidra_address": "0xa313f8",
+      "file_offset": "0xa213f8",
+      "role": "GemBank recharge click",
+      "before": "f04b2de900c090e5",
+      "after": "0000a0e31eff2fe1",
+      "relative_relocation": false
+    }
+  ],
+  "bounded_arm_cases": [
+    {
+      "role": "Lottery draw",
+      "entry": "0xa2bf74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Lottery draw",
+      "entry": "0xa2bf74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Lottery draw",
+      "entry": "0xa2bf74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Lottery click",
+      "entry": "0xa2bbb0",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Lottery click",
+      "entry": "0xa2bbb0",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Lottery click",
+      "entry": "0xa2bbb0",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "PlantTrial draw",
+      "entry": "0xe83de8",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "PlantTrial draw",
+      "entry": "0xe83de8",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "PlantTrial draw",
+      "entry": "0xe83de8",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "PlantTrial click",
+      "entry": "0xe83c74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "PlantTrial click",
+      "entry": "0xe83c74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "PlantTrial click",
+      "entry": "0xe83c74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Gemreturn draw",
+      "entry": "0xe6facc",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Gemreturn draw",
+      "entry": "0xe6facc",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Gemreturn draw",
+      "entry": "0xe6facc",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Gemreturn click",
+      "entry": "0xe6f7f0",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Gemreturn click",
+      "entry": "0xe6f7f0",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Gemreturn click",
+      "entry": "0xe6f7f0",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "GemBank recharge click",
+      "entry": "0xa313f8",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "GemBank recharge click",
+      "entry": "0xa313f8",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "GemBank recharge click",
+      "entry": "0xa313f8",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Lottery hit-test",
+      "entry": "0xa2bf74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Lottery hit-test",
+      "entry": "0xa2bf74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Lottery hit-test",
+      "entry": "0xa2bf74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Lottery hit-test",
+      "entry": "0xa2bf74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "PlantTrial hit-test",
+      "entry": "0xe83de8",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "PlantTrial hit-test",
+      "entry": "0xe83de8",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "PlantTrial hit-test",
+      "entry": "0xe83de8",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "PlantTrial hit-test",
+      "entry": "0xe83de8",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Gemreturn hit-test",
+      "entry": "0xe6facc",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Gemreturn hit-test",
+      "entry": "0xe6facc",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Gemreturn hit-test",
+      "entry": "0xe6facc",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "Gemreturn hit-test",
+      "entry": "0xe6facc",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "GemBank hit-test",
+      "entry": "0xa2bf74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "GemBank hit-test",
+      "entry": "0xa2bf74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "GemBank hit-test",
+      "entry": "0xa2bf74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    },
+    {
+      "role": "GemBank hit-test",
+      "entry": "0xa2bf74",
+      "returns_zero": true,
+      "preserves_callee_state": true
+    }
+  ],
+  "arm_cases_passed": 37,
+  "gem_background_and_icon_draw_calls_preserved": true,
+  "game_assets_changed": false,
+  "runtime_verified": false,
+  "scope": "Only isolated offline world-map entry rendering and hit/click handlers. No currency/save changes; no gameplay rewards or store purchase logic changed. Full WSA UI verification is separate."
+}
